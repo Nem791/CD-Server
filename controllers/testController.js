@@ -1,9 +1,10 @@
 const Test = require("../models/testModel");
 const catchAsync = require("../utils/catchAsync");
 const AppError = require("../utils/appError");
+const { TestService } = require("../services/test.service");
 
 exports.createTest = catchAsync(async (req, res) => {
-  const newTests = await Test.create(req.body);
+  const newTests = await TestService.createTest(req.body);
   res.status(201).json({
     status: "success",
     data: {
@@ -13,7 +14,7 @@ exports.createTest = catchAsync(async (req, res) => {
 });
 
 exports.getTest = catchAsync(async (req, res, next) => {
-  const test = await Test.findById(req.params.id);
+  const test = await TestService.getTest(req.params.id);
 
   if (!test) {
     return next(new AppError("No test found with that ID", 404));

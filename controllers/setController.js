@@ -1,9 +1,10 @@
 const Set = require("../models/setModel");
+const { SetService } = require("../services/set.service");
 const AppError = require("../utils/appError");
 const catchAsync = require("../utils/catchAsync");
 
 exports.createSet = catchAsync(async (req, res) => {
-  const newSets = await Set.create(req.body);
+  const newSets = await SetService.createSet(req.body);
 
   res.status(201).json({
     status: "succes",
@@ -14,7 +15,7 @@ exports.createSet = catchAsync(async (req, res) => {
 });
 
 exports.getSetById = catchAsync(async (req, res, next) => {
-  const sets = await Set.findById(req.params.setId);
+  const sets = await SetService.getSetById(req.params.setId);
   console.log(sets);
 
   if (!sets) {
@@ -30,12 +31,7 @@ exports.getSetById = catchAsync(async (req, res, next) => {
 });
 
 exports.updateSet = catchAsync(async (req, res, next) => {
-  const set = await Set.findByIdAndUpdate(req.params.setId, req.body, {
-    new: true,
-    // (trả về document mới nhất)
-    runValidators: true,
-    // (có chạy trình validate)
-  });
+  const set = await SetService.updateSet(req.params.setId, req.body);
 
   if (!set) {
     return next(new AppError("No document found with that ID", 404));
@@ -48,7 +44,7 @@ exports.updateSet = catchAsync(async (req, res, next) => {
 });
 
 exports.deleteSet = catchAsync(async (req, res, next) => {
-  const set = await Set.findByIdAndDelele(req.params.setId);
+  const set = await SetService.deleteSet(req.params.setId);
   if (!set) {
     return next(new AppError("No document found with that ID", 404));
   }

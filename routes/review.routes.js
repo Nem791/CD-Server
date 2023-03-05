@@ -1,13 +1,13 @@
 const express = require("express");
 
-const reviewController = require("./../controllers/reviewController");
+const reviewController = require("../controllers/reviewController");
 const authController = require("../controllers/authController");
 
-const router = express.Router();
+const reviewRouter = express.Router();
 
-router.use(authController.protect);
+reviewRouter.use(authController.protect);
 
-router
+reviewRouter
   .route("/")
   .get(reviewController.getAllReviews)
   .post(
@@ -16,10 +16,10 @@ router
     reviewController.createReview
   );
 
-router
+reviewRouter
   .route("/:id")
   .get(reviewController.getReview)
   .patch(reviewController.updateReview)
   .delete(reviewController.deleteReview);
 
-module.exports = router;
+module.exports = { reviewRouter };

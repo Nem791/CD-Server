@@ -1,9 +1,10 @@
 const catchAsync = require("../utils/catchAsync");
 const Schedule = require("../models/scheduleModel");
 const AppError = require("../utils/appError");
+const { ScheduleService } = require("../services/schedule.service");
 
 exports.createSchedule = catchAsync(async (req, res) => {
-  const newSchedule = await Schedule.create(req.body);
+  const newSchedule = await ScheduleService.createSchedule(req.body);
   res.status(201).json({
     status: "success",
     data: {
@@ -13,8 +14,7 @@ exports.createSchedule = catchAsync(async (req, res) => {
 });
 
 exports.getAllSchedule = catchAsync(async (req, res) => {
-  const { userId } = req.params;
-  const schedules = await Schedule.find({ createdBy: userId });
+  const schedules = await ScheduleService.getAllSchedule(req.params);
 
   res.status(200).json({
     status: "success",
@@ -26,7 +26,7 @@ exports.getAllSchedule = catchAsync(async (req, res) => {
 });
 
 exports.getSchedule = catchAsync(async (req, res, next) => {
-  const schedule = await Schedule.findById(req.params.id);
+  const schedule = await ScheduleService.getSchedule(req.params.id);
 
   if (!schedule) {
     return next(new AppError("No document found with that ID", 404));
@@ -41,12 +41,10 @@ exports.getSchedule = catchAsync(async (req, res, next) => {
 });
 
 exports.updateSchedule = catchAsync(async (req, res, next) => {
-  const schedule = await Schedule.findByIdAndUpdate(req.params.id, req.body, {
-    new: true,
-    // (để nó sẽ trả về document mới nhất)
-    runValidators: true,
-    // (có chạy trình validate)
-  });
+  const schedule = await ScheduleService.updateSchedule(
+    req.params.id,
+    req.body
+  );
 
   if (!schedule) {
     return next(new AppError("No schedule found with that ID", 404));
@@ -61,7 +59,7 @@ exports.updateSchedule = catchAsync(async (req, res, next) => {
 });
 
 exports.deleteSchedule = catchAsync(async (req, res, next) => {
-  const schedule = await Schedule.findByIdAndDelete(req.params.id);
+  const schedule = await ScheduleService.deleteSchedule(req.params.id);
   if (!schedule) {
     return next(new AppError("No booking found with that ID", 404));
   }

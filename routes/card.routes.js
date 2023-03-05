@@ -1,19 +1,19 @@
 const express = require("express");
-const cardController = require("./../controllers/cardController");
+const cardController = require("../controllers/cardController");
 
-const router = express.Router({ mergeParams: true });
+const cardRouter = express.Router({ mergeParams: true });
 
-router.route("/getAllCard").get(cardController.getAllCardInASet);
+cardRouter.route("/getAllCard").get(cardController.getCardsBySet);
 
-router
+cardRouter
   .route("/")
   .get(cardController.getAllCards)
   .post(cardController.createCard);
 
-router
+cardRouter
   .route("/:id")
   .get(cardController.getCard)
   .patch(cardController.updateCard)
   .delete(cardController.deleteCard);
 
-module.exports = router;
+module.exports = { cardRouter };

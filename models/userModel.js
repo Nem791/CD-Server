@@ -63,12 +63,6 @@ const userSchema = new mongoose.Schema(
       default: true,
       select: false,
     },
-    classes: [
-      {
-        type: mongoose.Schema.ObjectId,
-        ref: "Class",
-      },
-    ],
     friends: [
       {
         type: Schema.Types.Object,
@@ -89,12 +83,12 @@ const userSchema = new mongoose.Schema(
 );
 
 // Populate cho tất cả các query dùng find
-userSchema.pre(/^find/, function (next) {
-  this.populate({
-    path: "classes",
-  });
-  next();
-});
+// userSchema.pre(/^find/, function (next) {
+//   this.populate({
+//     path: "classes",
+//   });
+//   next();
+// });
 
 // Virtual populate (tạo 1 mảng chứa id của các class nhưng ko lưu vào CSDL)
 userSchema.virtual("");
