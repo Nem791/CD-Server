@@ -9,7 +9,12 @@ const indexRoutes = require("./routes/index.routes");
 
 // 1. Tạo ứng dụng express
 const app = express();
-app.use(cors());
+app.use(
+  cors({
+    credentials: true,
+    origin: true,
+  })
+);
 
 // 2. Ktra xem môi trường hiện tại mk đang code là môi trường j
 // console.log(process.env.NODE_ENV);

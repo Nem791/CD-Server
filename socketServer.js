@@ -14,6 +14,7 @@ const createScheduleHandler = require("./socketHandlers/schedule/createScheduleH
 const updateScheduleHandler = require("./socketHandlers/schedule/updateScheduleHandler");
 const deleteScheduleHandler = require("./socketHandlers/schedule/deleteScheduleHandler");
 const updateCardHandler = require("./socketHandlers/cards/updateCardHandler");
+const disconnectHandler = require("./socketHandlers/disconnectHandler");
 
 const registerSocketServer = (server) => {
   const io = require("socket.io")(server, {

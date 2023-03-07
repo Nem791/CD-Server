@@ -52,6 +52,14 @@ const getOnlineUsers = () => {
 
   return onlineUsers;
 };
+const removeConnectedUser = (socketId) => {
+  // Xóa ng dùng khỏi Map khi ng dùng mất kết nối
+  if (connectedUsers.has(socketId)) {
+    connectedUsers.delete(socketId);
+    console.log("new connected users");
+    console.log(connectedUsers);
+  }
+};
 
 module.exports = {
   getSocketServerInstance,
@@ -59,4 +67,5 @@ module.exports = {
   addNewConnectedUser,
   getActiveConnections,
   getOnlineUsers,
+  removeConnectedUser,
 };
