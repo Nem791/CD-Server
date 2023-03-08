@@ -19,8 +19,8 @@ const server = http.createServer(app);
 // C. Kết nối vs Socket.io
 registerSocketServer(server);
 
-const DB = process.env.MONGO.replace("<PASSWORD>", process.env.MONGO_PASSWORD);
-// const DB = "mongodb://localhost:27017/Quizlet";
+// const DB = process.env.MONGO.replace("<PASSWORD>", process.env.MONGO_PASSWORD);
+const DB = "mongodb://localhost:27017/Quizlet";
 
 // B. Kết nối vào Mongo Compass
 mongoose.connect(DB).then(() => {

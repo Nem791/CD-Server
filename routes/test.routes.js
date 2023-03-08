@@ -4,6 +4,7 @@ const testController = require("../controllers/testController");
 const testRouter = express.Router();
 
 testRouter.route("/").post(testController.createTest);
+testRouter.route("/").put(testController.test);
 
 testRouter.route("/:id").get(testController.getTest);
 
