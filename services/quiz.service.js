@@ -3,30 +3,43 @@ const QuizModel = require("../models/quizModel");
 const Test = require("../models/testModel");
 const { getBagOfWords, cosineSimilarity } = require("../utils/recommend");
 
-exports.TestService = {
-  createTest: async function (data) {
-    const newTests = await Test.create(data);
-    return newTests;
+exports.QuizService = {
+  createQuiz: async function (data) {
+    const quiz = await QuizModel.create(data);
+    return quiz;
   },
 
-  getTest: async function (id) {
-    const test = await Test.findById(id);
-    return test;
+  getAllQuizzes: async function (id) {
+    const quizzes = await QuizModel.find({});
+    return quizzes;
   },
 
-  test: async function () {
+  getQuizById: async function (id) {
+    const quiz = await QuizModel.findById(id);
+    return quiz;
+  },
+
+  recommendQuizzes: async function (quizId) {
     // Get the bag-of-words vectors for the user's quizzes
-    const currentQuizId = new Types.ObjectId("640837a445fc9c15f561510f");
+    const currentQuizId = new Types.ObjectId(quizId);
 
     const QuizData = await QuizModel.find({ _id: { $ne: currentQuizId } });
 
     const userQuizzes = QuizData.filter(
       (item) => item._id !== currentQuizId
-    ).map((item) => getBagOfWords(item.title));
+    ).map((item) =>
+      getBagOfWords(item.title + " " + item.description + " " + item.tags[0])
+    );
 
     // Get the bag-of-words vector for the current quiz
     const currentQuiz = await QuizModel.findById(String(currentQuizId));
-    const currentVector = getBagOfWords(currentQuiz.title);
+    const currentVector = getBagOfWords(
+      currentQuiz.title +
+        " " +
+        currentQuiz.description +
+        " " +
+        currentQuiz.tags[0]
+    );
 
     // Calculate the similarity between the current quiz and the user's quizzes
     const similarities = {};

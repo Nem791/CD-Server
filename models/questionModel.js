@@ -25,6 +25,10 @@ const questionSchema = new mongoose.Schema({
     type: Schema.Types.ObjectId,
     ref: "Test",
   },
+  quiz: {
+    type: Schema.Types.ObjectId,
+    ref: "Quiz",
+  },
 });
 
 const Question = mongoose.model("Question", questionSchema);
