@@ -14,12 +14,12 @@ const quizSchema = new mongoose.Schema({
   description: {
     type: String,
   },
-  questions: [
-    {
-      type: Schema.Types.ObjectId,
-      ref: "Question",
-    },
-  ],
+  // questions: [
+  //   {
+  //     type: Schema.Types.ObjectId,
+  //     ref: "Question",
+  //   },
+  // ],
   user: {
     type: Schema.Types.ObjectId,
     required: [true, "A test must belong to one user"],

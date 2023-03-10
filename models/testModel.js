@@ -19,7 +19,7 @@ const testSchema = new mongoose.Schema({
   },
   set: {
     type: Schema.Types.ObjectId,
-    // required: [true, "A test must belong to a set"],
+    required: [true, "A test must belong to a set"],
     ref: "Set",
   },
   createdAt: {
