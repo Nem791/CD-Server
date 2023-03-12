@@ -1,3 +1,5 @@
+const { Types } = require("mongoose");
+
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
@@ -16,6 +18,10 @@ const questionReviewSchema = new mongoose.Schema({
     ref: "ReviewTest",
     required: true,
   },
+  user: {
+    type: Types.ObjectId,
+    ref: "User",
+  },
   repetitions: {
     type: Number,
     default: 0,
@@ -30,6 +36,7 @@ const questionReviewSchema = new mongoose.Schema({
   },
   rating: {
     type: Number,
+    required: true,
   },
 });
 
