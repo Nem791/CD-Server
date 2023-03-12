@@ -1,3 +1,4 @@
+const Question = require("../models/questionModel");
 const Test = require("../models/testModel");
 
 exports.QuestionService = {
