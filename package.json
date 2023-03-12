@@ -28,6 +28,7 @@
     "nodemailer": "^6.7.8",
     "nodemon": "^2.0.19",
     "socket.io": "^4.5.2",
+    "stripe": "^11.14.0",
     "uuid": "^9.0.0",
     "validator": "^13.7.0"
   }

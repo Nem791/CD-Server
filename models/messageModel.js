@@ -10,6 +10,7 @@ const messageSchema = new Schema({
   content: { type: String },
   date: { type: Date, default: Date.now() },
   type: { type: String },
+  turn: { type: Number },
 });
 
 module.exports = mongoose.model("Message", messageSchema);
