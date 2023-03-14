@@ -7,6 +7,8 @@ const DOMAIN = "http://localhost:3000";
 
 exports.TransactionService = {
   createTransaction: async function (data) {
+    const unit_amount = data.unit_amount;
+    const name = data.name;
     const session = await stripe.checkout.sessions.create({
       // line_items: [
       //   {
@@ -15,7 +17,22 @@ exports.TransactionService = {
       //     quantity: 1,
       //   },
       // ],
-      line_items: data,
+      line_items: [
+        {
+          price_data: {
+            currency: "usd",
+            product_data: {
+              name,
+              images: [
+                "https://img.freepik.com/free-vector/stylish-business-pricing-table-template_1017-32006.jpg?w=2000",
+              ],
+            },
+            // 500, 1000, 1500
+            unit_amount,
+          },
+          quantity: 1,
+        },
+      ],
       mode: "payment",
       success_url: `${DOMAIN}`,
       cancel_url: `${DOMAIN}`,
