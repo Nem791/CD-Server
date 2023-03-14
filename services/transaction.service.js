@@ -9,6 +9,8 @@ exports.TransactionService = {
   createTransaction: async function (data) {
     const unit_amount = data.unit_amount;
     const name = data.name;
+    const user = data.user;
+
     const session = await stripe.checkout.sessions.create({
       // line_items: [
       //   {
@@ -36,6 +38,9 @@ exports.TransactionService = {
       mode: "payment",
       success_url: `${DOMAIN}`,
       cancel_url: `${DOMAIN}`,
+      metadata: {
+        user,
+      },
     });
     return session.url;
   },
@@ -48,8 +53,10 @@ exports.TransactionService = {
     // paymentIntentId: string | Stripe.PaymentIntent (can be this type with expand parameter)
     let paymentIntentId = event.data.object.id;
     // Make this variable string to avoid Typescript Overload error
+    const metadata = event.data.object.metadata;
+    console.log("metadata: ", metadata);
+
     paymentIntentId = String(paymentIntentId);
-    console.log("paymentIntentId: ", event.data.object);
 
     const productOrderedDetails = await stripe.checkout.sessions.listLineItems(
       paymentIntentId
@@ -59,6 +66,10 @@ exports.TransactionService = {
       "productOrderedDetails: ",
       JSON.stringify(productOrderedDetails)
     );
+
+    await User.findByIdAndUpdate(metadata.user, {
+      paidAmount: Number(productOrderedDetails.data[0].amount_total),
+    });
 
     return productOrderedDetails;
   },
