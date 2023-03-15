@@ -1,7 +1,9 @@
 const { Types } = require("mongoose");
 const ReviewTestBullQueue = require("../bull/queue");
+const Question = require("../models/questionModel");
 const QuestionReviewModel = require("../models/questionReviewModel");
 const ReviewTestModel = require("../models/reviewTestModel");
+const Test = require("../models/testModel");
 const calculateSM_2 = require("../utils/sm-2");
 
 const reviewTestQueue = new ReviewTestBullQueue();
@@ -41,6 +43,21 @@ exports.ReviewService = {
     const reviewTests = {};
     const reviewQuestions = [];
     const userId = new Types.ObjectId(data[0].user);
+
+    let setId;
+    let quizId;
+
+    const questionInfo = await Question.findById(String(data[0].question));
+    if (questionInfo.test) {
+      const test = await Test.findById(String(questionInfo.test));
+      setId = test.set;
+    } else if (questionInfo.quiz) {
+      quizId = questionInfo.quiz;
+    }
+
+    const deletedReviewSet = await ReviewTestModel.deleteMany({ set: setId });
+    const deletedReviewQuiz = await ReviewTestModel.deleteMany({ set: quizId });
+
     for (const question of data) {
       const processedQuestion = calculateSM_2(question);
       const reviewDate =
@@ -67,11 +84,15 @@ exports.ReviewService = {
         );
         reviewTestQuestions.push(questionReview._id);
       }
+
+      const set = setId ? setId : quizId;
+
       const reviewTest = await this.createReviewTest({
         name: `${date}`,
         user: userId,
         questions: reviewTestQuestions,
         reviewDate: reviewTestDate,
+        set,
       });
     }
 

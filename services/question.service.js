@@ -7,11 +7,17 @@ exports.QuestionService = {
 
     let newQuestionList;
     if (type === "essay") {
-      newQuestionList = await Question.insertMany(questionEssay);
+      newQuestionList = await Question.insertMany({
+        ...questionEssay,
+        test: testId,
+      });
     }
 
     if (type === "multiple-choice") {
-      newQuestionList = await Question.insertMany(questionMulty);
+      newQuestionList = await Question.insertMany({
+        ...questionMulty,
+        test: testId,
+      });
     }
 
     const test = await Test.findById(testId);
