@@ -4,6 +4,7 @@ const Question = require("../models/questionModel");
 const QuestionReviewModel = require("../models/questionReviewModel");
 const ReviewTestModel = require("../models/reviewTestModel");
 const Test = require("../models/testModel");
+const calculateRating = require("../utils/calculateRating");
 const calculateSM_2 = require("../utils/sm-2");
 
 const reviewTestQueue = new ReviewTestBullQueue();
@@ -59,6 +60,8 @@ exports.ReviewService = {
     const deletedReviewQuiz = await ReviewTestModel.deleteMany({ set: quizId });
 
     for (const question of data) {
+      question.rating = await calculateRating(question);
+
       const processedQuestion = calculateSM_2(question);
       const reviewDate =
         processedQuestion.reviewDate.toLocaleDateString("pt-PT");

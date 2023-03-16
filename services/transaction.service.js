@@ -1,4 +1,5 @@
 const { Types } = require("mongoose");
+const Question = require("../models/questionModel");
 const User = require("../models/userModel");
 
 const stripe = require("stripe")(process.env.STRIPE_PUBLIC_API_KEY);
@@ -10,6 +11,18 @@ exports.TransactionService = {
     const unit_amount = data.unit_amount;
     const name = data.name;
     const user = data.user;
+
+    const question = await Question.find({ answer: "C" });
+    console.log(question.length);
+    await Question.updateMany({ answer: "C" }, [
+      {
+        $set: {
+          answer: {
+            $first: "$options",
+          },
+        },
+      },
+    ]);
 
     const session = await stripe.checkout.sessions.create({
       // line_items: [
