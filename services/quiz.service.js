@@ -25,7 +25,8 @@ exports.QuizService = {
         localField: "quiz",
         foreignField: "_id",
         as: "quiz",
-      });
+      })
+      .limit(2);
     return quiz;
   },
 
