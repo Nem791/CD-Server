@@ -1,9 +1,11 @@
+const { Types } = require("mongoose");
 const Conversation = require("../../models/conversationsModel");
 const severStore = require("../../severStore");
 
 // Lưu lại lịch sử các tin nhắn cũ
 const updateChatHistory = async (
   conversationId,
+  participants,
   toSpecifiedSocketId = null
   // => Để chỉ gửi lịch sử tin nhắn tới ng dùng dùng cụ thể
 ) => {
@@ -17,7 +19,43 @@ const updateChatHistory = async (
     },
   });
 
-  // console.log("conversation", conversation);
+  participants = participants
+    ? participants
+    : ["6415bc9ca508014d9c06e30c", "6415bc9ca508014d9c06e30c"];
+  const conversations = await Conversation.aggregate()
+    .match({
+      $and: [
+        {
+          participants: {
+            $all: [
+              {
+                $elemMatch: {
+                  $eq: new Types.ObjectId(participants[0]),
+                },
+              },
+              {
+                $elemMatch: {
+                  $eq: new Types.ObjectId(participants[1]),
+                },
+              },
+            ],
+          },
+        },
+      ],
+    })
+    .lookup({
+      from: "messages",
+      localField: "messages",
+      foreignField: "_id",
+      as: "messages",
+    })
+    .lookup({
+      from: "users",
+      localField: "participants",
+      foreignField: "_id",
+      as: "participants",
+    });
+  console.log("conversations: ", conversations);
 
   if (conversation) {
     const io = severStore.getSocketServerInstance();
@@ -29,6 +67,7 @@ const updateChatHistory = async (
       return io.to(toSpecifiedSocketId).emit("direct-chat-history", {
         messages: conversation.messages,
         participants: conversation.participants,
+        conversations,
       });
     }
 
@@ -44,6 +83,7 @@ const updateChatHistory = async (
         io.to(socketId).emit("direct-chat-history", {
           messages: conversation.messages,
           participants: conversation.participants,
+          conversations,
         });
       });
     });

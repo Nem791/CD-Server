@@ -15,6 +15,14 @@ const conversationSchema = new Schema({
       ref: "Message",
     },
   ],
+  createdAt: {
+    type: Date,
+    default: Date.now,
+  },
+  winner: {
+    type: Schema.Types.ObjectId,
+    ref: "User",
+  },
 });
 
 module.exports = mongoose.model("Conversation", conversationSchema);
