@@ -6,7 +6,7 @@ const directMessageHandler = async (socket, data) => {
   try {
     const { _id: userId } = socket.handshake.auth.user;
 
-    const { roomChatId, content } = data;
+    const { roomChatId, content, turn } = data;
 
     // 1. Tạo message mới
     const message = await Message.create({
@@ -14,6 +14,7 @@ const directMessageHandler = async (socket, data) => {
       author: userId,
       data: new Date(),
       type: "DIRECT",
+      turn,
     });
 
     // 2. Kiểm tra xem đã tồn tại conversations nào giữa hai ng dùng chưa
