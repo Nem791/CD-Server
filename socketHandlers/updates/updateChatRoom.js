@@ -63,7 +63,7 @@ const updateChatRoom = async (userId) => {
       // 3. Gửi List room tới các ng dùng
       receiverList.forEach((receiverSocketId) => {
         io.to(receiverSocketId).emit("rooms-lists", {
-          rooms: roomsList ? roomsList : [],
+          rooms: roomsList[0].documents ? roomsList[0].documents : [],
         });
       });
     }
