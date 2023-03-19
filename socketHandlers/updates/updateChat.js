@@ -54,6 +54,30 @@ const updateChatHistory = async (
       localField: "participants",
       foreignField: "_id",
       as: "participants",
+    })
+    .unwind({
+      path: "$messages",
+    })
+    .lookup({
+      from: "users",
+      localField: "messages.author",
+      foreignField: "_id",
+      as: "messages.author",
+    })
+    .unwind({
+      path: "$messages.author",
+    })
+    .group({
+      _id: "$_id",
+      messages: {
+        $push: "$messages",
+      },
+      participants: {
+        $first: "$participants",
+      },
+      createdAt: {
+        $first: "$createdAt",
+      },
     });
   console.log("conversations: ", conversations);
 

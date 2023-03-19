@@ -19,9 +19,8 @@ const conversationSchema = new Schema({
     type: Date,
     default: Date.now,
   },
-  winner: {
-    type: Schema.Types.ObjectId,
-    ref: "User",
+  score: {
+    type: Object,
   },
 });
 

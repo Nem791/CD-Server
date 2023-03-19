@@ -110,14 +110,15 @@ const registerSocketServer = (server) => {
       responseInviteHandler(socket, data);
     });
 
-    socket.on("start-timer", (startTime, duration) => {
-      const remainingTime = duration - (Date.now() - startTime);
-      let timer = setInterval(() => {
-        remainingTime = remainingTime - 1000;
-        socket.emit("timer-tick", remainingTime);
+    let timer;
+    socket.on("start-timer", () => {
+      const remainingTime = 15;
+      timer = setInterval(() => {
+        remainingTime--;
+        socket.emit("update-timer", remainingTime);
         if (remainingTime <= 0) {
           clearInterval(timer);
-          socket.emit("turn-ended");
+          socket.emit("game-over", { loser: socket.id });
         }
       }, 1000);
     });
