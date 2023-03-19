@@ -6,7 +6,7 @@ const directMessageHandler = async (socket, data) => {
   try {
     const { _id: userId } = socket.handshake.auth.user;
 
-    const { roomChatId, content, turn } = data;
+    const { roomChatId, content, turn, participants } = data;
 
     // 1. Tạo message mới
     const message = await Message.create({
@@ -22,28 +22,27 @@ const directMessageHandler = async (socket, data) => {
     const conversation = await Conversation.findOne({
       // participants: { $all: [userId, receiverUserId] },
       _id: roomChatId,
+      $or: [
+        { winner: { $exists: false } },
+        { winner: null },
+        { winner: undefined },
+      ],
     });
 
     if (conversation) {
       conversation.messages.push(message._id);
       await conversation.save();
-      chatUpdates.updateChatHistory(conversation._id.toString());
+      chatUpdates.updateChatHistory(conversation._id.toString(), participants);
+    } else {
+      const newConversation = await Conversation.create({
+        messages: [message._id],
+        participants,
+      });
+      chatUpdates.updateChatHistory(
+        newConversation._id.toString(),
+        participants
+      );
     }
-
-    // if (conversation) {
-    //   conversation.messages.push(message._id);
-    //   await conversation.save();
-    //   // Hiển thị và update tin nhắn tới ng gửi và ng nhận nếu họ onl
-    //   chatUpdates.updateChatHistory(conversation._id.toString());
-    // } else {
-    //   // Tạo 1 conversations nếu nó ko exists
-    //   const newConversation = await Conversation.create({
-    //     messages: [message._id],
-    //     participants: [userId, receiverUserId],
-    //   });
-    //   // Hiển thị và update tin nhắn tới ng gửi và ng nhận nếu họ onl
-    //   chatUpdates.updateChatHistory(conversation._id.toString());
-    // }
   } catch (err) {
     console.log(err);
   }

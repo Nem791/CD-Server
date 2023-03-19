@@ -15,6 +15,9 @@ const updateScheduleHandler = require("./socketHandlers/schedule/updateScheduleH
 const deleteScheduleHandler = require("./socketHandlers/schedule/deleteScheduleHandler");
 const updateCardHandler = require("./socketHandlers/cards/updateCardHandler");
 const disconnectHandler = require("./socketHandlers/disconnectHandler");
+const inviteLinkingWordsHandler = require("./socketHandlers/Linking_Words/inviteHandler");
+const cancelInviteHandler = require("./socketHandlers/Linking_Words/cancelInviteHandler");
+const responseInviteHandler = require("./socketHandlers/Linking_Words/responseInviteHandler");
 
 const registerSocketServer = (server) => {
   const io = require("socket.io")(server, {
@@ -89,8 +92,34 @@ const registerSocketServer = (server) => {
     });
 
     socket.on("direct-chat-history", (data) => {
-      // console.log("history", data);
+      console.log("history", socket.id);
       directChatHistoryHandler(socket, data);
+    });
+
+    socket.on("invite-to-play", (data) => {
+      console.log("invite-to-play");
+      inviteLinkingWordsHandler(socket, data);
+    });
+
+    socket.on("cancel-invite", (data) => {
+      cancelInviteHandler(socket, data);
+    });
+
+    socket.on("response-invitation", (data) => {
+      console.log("response-invitation");
+      responseInviteHandler(socket, data);
+    });
+
+    socket.on("start-timer", (startTime, duration) => {
+      const remainingTime = duration - (Date.now() - startTime);
+      let timer = setInterval(() => {
+        remainingTime = remainingTime - 1000;
+        socket.emit("timer-tick", remainingTime);
+        if (remainingTime <= 0) {
+          clearInterval(timer);
+          socket.emit("turn-ended");
+        }
+      }, 1000);
     });
 
     // Schedule

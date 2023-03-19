@@ -28,4 +28,10 @@ exports.QuestionService = {
     await test.save();
     return newQuestionList;
   },
+
+  getQuestionById: async function (id) {
+    const question = await Question.findById(id);
+
+    return question;
+  },
 };

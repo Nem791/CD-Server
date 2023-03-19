@@ -11,3 +11,14 @@ exports.createQuestion = catchAsync(async (req, res) => {
     },
   });
 });
+
+exports.getQuestionById = catchAsync(async (req, res) => {
+  const question = await QuestionService.getQuestionById(req.params.questionId);
+
+  res.status(201).json({
+    status: "success",
+    data: {
+      question,
+    },
+  });
+});

@@ -3,6 +3,8 @@ const questionController = require("../controllers/questionController");
 
 const questionRoutes = express.Router();
 
-questionRoutes.route("/").post(questionController.createQuestion);
+questionRoutes.post(questionController.createQuestion);
+
+questionRoutes.route("/:questionId").get(questionController.getQuestionById);
 
 module.exports = { questionRoutes };
