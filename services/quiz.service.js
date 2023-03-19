@@ -1,4 +1,5 @@
 const { Types } = require("mongoose");
+const Question = require("../models/questionModel");
 const QuizModel = require("../models/quizModel");
 const Test = require("../models/testModel");
 const { getBagOfWords, cosineSimilarity } = require("../utils/recommend");
@@ -15,7 +16,17 @@ exports.QuizService = {
   },
 
   getQuizById: async function (id) {
-    const quiz = await QuizModel.findById(id);
+    const quiz = await Question.aggregate()
+      .match({
+        quiz: new Types.ObjectId(id),
+      })
+      .lookup({
+        from: "quizzes",
+        localField: "quiz",
+        foreignField: "_id",
+        as: "quiz",
+      })
+      .limit(2);
     return quiz;
   },
 

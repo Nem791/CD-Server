@@ -10,6 +10,7 @@ const { reviewQuestionRouter } = require("./reviewQuestion.routes");
 const { scheduleRouter } = require("./schedule.routes");
 const { setRouter } = require("./set.routes");
 const { testRouter } = require("./test.routes");
+const { transactionRouter } = require("./transaction.routes");
 const { userRouter } = require("./user.routes");
 const { webhookRouter } = require("./webhook.routes");
 
@@ -25,6 +26,8 @@ indexRoutes.use("/quiz", quizRouter);
 indexRoutes.use("/leaderboard", leaderboardRouter);
 indexRoutes.use("/webhook", webhookRouter);
 indexRoutes.use("/review-question", reviewQuestionRouter);
+
+indexRoutes.use("/transaction", transactionRouter);
 
 indexRoutes.use("/friend-invitation", friendRouter);
 

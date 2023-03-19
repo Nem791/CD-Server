@@ -41,7 +41,7 @@ exports.getAllQuizzes = catchAsync(async (req, res, next) => {
 });
 
 exports.getQuizById = catchAsync(async (req, res, next) => {
-  const quizzes = await QuizService.getAllQuizzes(req.params.id);
+  const quizzes = await QuizService.getQuizById(req.params.id);
 
   if (!quizzes) {
     return next(new AppError("No test found with that ID", 404));

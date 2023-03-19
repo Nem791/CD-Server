@@ -18,7 +18,7 @@ const userTestHistorySchema = new mongoose.Schema({
 
   finishedAt: {
     type: Date,
-    default: Date.now(),
+    default: Date.now,
   },
   duration: {
     type: Number,

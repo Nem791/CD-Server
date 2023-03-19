@@ -75,6 +75,7 @@ const userSchema = new mongoose.Schema(
         ref: "Conversation",
       },
     ],
+    paidAmount: { type: Number },
   },
   {
     toJSON: { virtuals: true },

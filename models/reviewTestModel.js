@@ -8,7 +8,7 @@ const reviewTestSchema = new mongoose.Schema({
     type: mongoose.Types.ObjectId,
     ref: "User",
   },
-  createdAt: { type: Date, default: Date.now() },
+  createdAt: { type: Date, default: Date.now },
   questions: [{ type: mongoose.Types.ObjectId }],
   done: {
     type: Boolean,
@@ -17,6 +17,10 @@ const reviewTestSchema = new mongoose.Schema({
   reviewDate: {
     type: Date,
     required: true,
+  },
+  set: {
+    type: mongoose.Types.ObjectId,
+    ref: "Set",
   },
 });
 
