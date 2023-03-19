@@ -9,7 +9,6 @@ const responseInviteHandler = async (socket, data) => {
 
   // data = {
   //   accept: true,
-  //   _id: inviteId,
   //   senderId: userId,
   //   receiverId: invitedUsers[0],
   // }

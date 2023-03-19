@@ -6,11 +6,12 @@ const severStore = require("../../severStore");
 const cancelInviteHandler = async (socket, data) => {
   const io = severStore.getSocketServerInstance();
   try {
-    const { inviteId } = data;
+    const { senderId, receiverId } = data;
 
-    const invitation = await FriendInvitation.findByIdAndDelete(
-      String(inviteId)
-    );
+    const invitation = await FriendInvitation.findOneAndDelete({
+      senderId,
+      receiverId,
+    });
 
     // return io.to(toSpecifiedSocketId).emit("direct-chat-history", {
     //   messages: conversation.messages,
