@@ -42,31 +42,30 @@ const updateChatRoom = async (userId) => {
         _id: 0,
         documents: 1,
       });
-    console.log("roomsList aggregate: ", roomsList[0].documents);
 
-    if (user) {
-      let roomsList = user.rooms.map(async (r) => {
-        const conversation = await Conversation.findById(r._id).populate(
-          "participants",
-          "_id name email avatarUrl"
-        );
+    // if (user) {
+    //   let roomsList = user.rooms.map(async (r) => {
+    //     const conversation = await Conversation.findById(r._id).populate(
+    //       "participants",
+    //       "_id name email avatarUrl"
+    //     );
 
-        return conversation;
+    //     return conversation;
+    //   });
+
+    //   roomsList = await Promise.all(roomsList);
+    //   console.log("roomsList: ", roomsList);
+
+    // 2. get io server instance
+    const io = serverStore.getSocketServerInstance();
+
+    // 3. Gửi List room tới các ng dùng
+    receiverList.forEach((receiverSocketId) => {
+      io.to(receiverSocketId).emit("rooms-lists", {
+        rooms: roomsList[0].documents ? roomsList[0].documents : [],
       });
-
-      roomsList = await Promise.all(roomsList);
-      console.log("roomsList: ", roomsList);
-
-      // 2. get io server instance
-      const io = serverStore.getSocketServerInstance();
-
-      // 3. Gửi List room tới các ng dùng
-      receiverList.forEach((receiverSocketId) => {
-        io.to(receiverSocketId).emit("rooms-lists", {
-          rooms: roomsList[0].documents ? roomsList[0].documents : [],
-        });
-      });
-    }
+    });
+    // }
   }
 };
 
