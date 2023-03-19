@@ -5,10 +5,10 @@ const AppError = require("../utils/appError");
 const catchAsync = require("../utils/catchAsync");
 
 exports.createReviewQuestions = catchAsync(async (req, res) => {
-  const newSets = await ReviewService.createReviewQuestions(req.body.data);
+  const score = await ReviewService.createReviewQuestions(req.body.data);
 
   res.status(201).json({
-    status: "succes",
+    score,
   });
 });
 

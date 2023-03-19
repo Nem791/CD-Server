@@ -6,6 +6,7 @@ const ReviewTestModel = require("../models/reviewTestModel");
 const Test = require("../models/testModel");
 const calculateRating = require("../utils/calculateRating");
 const calculateSM_2 = require("../utils/sm-2");
+const { LeaderboardService } = require("./leaderboard.service");
 
 const reviewTestQueue = new ReviewTestBullQueue();
 
@@ -59,8 +60,13 @@ exports.ReviewService = {
     const deletedReviewSet = await ReviewTestModel.deleteMany({ set: setId });
     const deletedReviewQuiz = await ReviewTestModel.deleteMany({ set: quizId });
 
+    let score = 0;
+
     for (const question of data) {
       question.rating = await calculateRating(question);
+      if (question.rating >= 3) {
+        score++;
+      }
 
       const processedQuestion = calculateSM_2(question);
       const reviewDate =
@@ -99,7 +105,13 @@ exports.ReviewService = {
       });
     }
 
-    return { status: "success" };
+    await LeaderboardService.updateLeaderboard({
+      recentScore: score,
+      user: userId,
+      quiz: quizId ? quizId : "640814263540faff47c65d06",
+    });
+
+    return { score: `${score} /${data.length}` };
   },
 
   getTodayReviewTests: async function () {
