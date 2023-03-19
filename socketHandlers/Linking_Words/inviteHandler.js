@@ -22,10 +22,19 @@ const inviteLinkingWordsHandler = async (socket, data) => {
     }
 
     if (invitedUsers && invitedUsers[0]) {
-      const invitation = await FriendInvitation.create({
+      let invitation = await FriendInvitation.create({
         senderId: userId,
         receiverId: invitedUsers[0],
       });
+
+      invitation = await FriendInvitation.aggregate()
+        .match({ _id: new Types.ObjectId(invitation._id) })
+        .lookup({
+          from: "users",
+          localField: "senderId",
+          foreignField: "_id",
+          as: "senderId",
+        });
 
       const activeConnections = severStore.getActiveConnections(
         String(invitedUsers[0])
