@@ -42,7 +42,7 @@ const responseInviteHandler = async (socket, data) => {
         });
 
         for (const user of room) {
-          io.to(user.socketId).emit("start-game", {});
+          io.to(user.socketId).emit("initiate-game", {});
         }
       } else {
         const senderSocketIds = severStore.getActiveConnections(
