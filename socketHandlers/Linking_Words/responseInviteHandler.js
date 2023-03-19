@@ -15,8 +15,8 @@ const responseInviteHandler = async (socket, data) => {
   // }
 
   try {
-    const { accept, _id: invitationId, senderId, receiverId } = data;
-    const invitation = await FriendInvitation.findById(String(invitationId));
+    const { accept, senderId, receiverId } = data;
+    const invitation = await FriendInvitation.findOne({ senderId, receiverId });
 
     if (invitation) {
       if (accept) {

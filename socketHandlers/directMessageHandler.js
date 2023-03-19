@@ -39,7 +39,9 @@ const directMessageHandler = async (socket, data) => {
 
     for (const userScore in conversation.score) {
       if (conversation.score.hasOwnProperty(userScore)) {
-        console.log(`${userScore}: ${population[key]}`);
+        if (conversation.score[userScore]) {
+          console.log(`${userScore}: ${conversation.score[userScore]}`);
+        }
       }
     }
   } catch (err) {

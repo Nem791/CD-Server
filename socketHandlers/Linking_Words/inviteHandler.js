@@ -7,7 +7,7 @@ const inviteLinkingWordsHandler = async (socket, data) => {
   const io = severStore.getSocketServerInstance();
   try {
     const { _id: userId } = socket.handshake.auth.user;
-    const { roomId, inviteId } = data;
+    const { roomId } = data;
     const invitedUsers = [];
 
     const conversation = await conversationsModel.findOne({
@@ -20,11 +20,8 @@ const inviteLinkingWordsHandler = async (socket, data) => {
       }
     }
 
-    console.log("socket.id: ", inviteId);
-
     if (invitedUsers && invitedUsers[0]) {
       const invitation = await FriendInvitation.create({
-        _id: inviteId,
         senderId: userId,
         receiverId: invitedUsers[0],
       });
