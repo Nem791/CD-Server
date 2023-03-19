@@ -11,7 +11,7 @@ const directMessageHandler = async (socket, data) => {
 
     let { roomChatId, content, participants } = data;
 
-    participants = [participants[0]._id, participants[1]._id];
+    participants = [participants[0]?._id, participants[1]?._id];
     console.log("participants: ", participants);
 
     for (let participant of participants) {
