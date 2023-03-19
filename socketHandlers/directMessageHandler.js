@@ -1,12 +1,22 @@
 const Message = require("../models/messageModel");
 const Conversation = require("../models/conversationsModel");
 const chatUpdates = require("./updates/updateChat");
+const severStore = require("../severStore");
+const { Types } = require("mongoose");
 
 const directMessageHandler = async (socket, data) => {
   try {
+    const io = severStore.getSocketServerInstance();
     const { _id: userId } = socket.handshake.auth.user;
 
-    const { roomChatId, content, participants } = data;
+    let { roomChatId, content, participants } = data;
+
+    participants = [participants[0]._id, participants[1]._id];
+    console.log("participants: ", participants);
+
+    for (let participant of participants) {
+      participant = new Types.ObjectId(String(participant));
+    }
 
     // 1. Tạo message mới
     const message = await Message.create({
@@ -37,11 +47,30 @@ const directMessageHandler = async (socket, data) => {
       { new: true, upsert: true }
     );
 
-    for (const userScore in conversation.score) {
-      if (conversation.score.hasOwnProperty(userScore)) {
-        if (conversation.score[userScore]) {
-          console.log(`${userScore}: ${conversation.score[userScore]}`);
-        }
+    chatUpdates.updateChatHistory(participants);
+    if (conversation.score[userId] >= 40) {
+      for (let participant of participants) {
+        const activeConnections = severStore.getActiveConnections(
+          String(participant)
+        );
+        console.log("game-over");
+        io.to(activeConnections[0]).emit("game-over", {
+          winner: String(userId),
+        });
+      }
+    } else {
+      const player =
+        String(userId) !== String(participants[0])
+          ? String(participants[0])
+          : String(participants[1]);
+
+      for (const participant of participants) {
+        const activeConnections = severStore.getActiveConnections(
+          String(participant)
+        );
+        io.to(activeConnections[0]).emit("switch-turn", {
+          player,
+        });
       }
     }
   } catch (err) {
