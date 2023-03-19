@@ -8,13 +8,14 @@ const inviteLinkingWordsHandler = async (socket, data) => {
   try {
     const { _id: userId } = socket.handshake.auth.user;
     const { roomId } = data;
+
     const invitedUsers = [];
 
     const conversation = await conversationsModel.findOne({
       _id: roomId,
     });
 
-    for (const user of conversation.participants) {
+    for (const user of conversation?.participants) {
       if (String(user) !== userId) {
         invitedUsers.push(user);
       }
