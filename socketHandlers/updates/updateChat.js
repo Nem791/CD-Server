@@ -77,7 +77,7 @@ const updateChatHistory = async (
   if (toSpecifiedSocketId) {
     // (phát sự kiện xem lại lịch sử tin nhắn)
     return io.to(toSpecifiedSocketId).emit("direct-chat-history", {
-      participants: conversations[0].participants,
+      participants: conversations[0]?.participants,
       conversations,
     });
   }
@@ -85,14 +85,14 @@ const updateChatHistory = async (
   // Kiểm tra xem ng dùng của conversations có đg online k
   // (Nếu có gửi họ lịch sử tin nhắn)
 
-  conversations[0].participants.forEach((userId) => {
+  conversations[0]?.participants.forEach((userId) => {
     const activeConnections = severStore.getActiveConnections(
       userId.toString()
     );
 
     activeConnections.forEach((socketId) => {
       io.to(socketId).emit("direct-chat-history", {
-        participants: conversations[0].participants,
+        participants: conversations[0]?.participants,
         conversations,
       });
     });
