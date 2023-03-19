@@ -6,7 +6,7 @@ const directMessageHandler = async (socket, data) => {
   try {
     const { _id: userId } = socket.handshake.auth.user;
 
-    const { roomChatId, content, turn, participants } = data;
+    const { roomChatId, content, participants } = data;
 
     // 1. Tạo message mới
     const message = await Message.create({
@@ -14,34 +14,33 @@ const directMessageHandler = async (socket, data) => {
       author: userId,
       data: new Date(),
       type: "DIRECT",
-      turn,
     });
 
     // 2. Kiểm tra xem đã tồn tại conversations nào giữa hai ng dùng chưa
     // (nếu không tạo conversations mới)
-    const conversation = await Conversation.findOne({
-      // participants: { $all: [userId, receiverUserId] },
-      _id: roomChatId,
-      $or: [
-        { winner: { $exists: false } },
-        { winner: null },
-        { winner: undefined },
-      ],
-    });
+    const conversation = await Conversation.findOneAndUpdate(
+      {
+        // participants: { $all: [userId, receiverUserId] },
+        _id: roomChatId,
+      },
+      {
+        $set: {
+          participants,
+        },
+        $push: {
+          messages: message._id,
+        },
+        $inc: {
+          [`score.${userId}`]: content.length,
+        },
+      },
+      { new: true, upsert: true }
+    );
 
-    if (conversation) {
-      conversation.messages.push(message._id);
-      await conversation.save();
-      chatUpdates.updateChatHistory(conversation._id.toString(), participants);
-    } else {
-      const newConversation = await Conversation.create({
-        messages: [message._id],
-        participants,
-      });
-      chatUpdates.updateChatHistory(
-        newConversation._id.toString(),
-        participants
-      );
+    for (const userScore in conversation.score) {
+      if (conversation.score.hasOwnProperty(userScore)) {
+        console.log(`${userScore}: ${population[key]}`);
+      }
     }
   } catch (err) {
     console.log(err);
