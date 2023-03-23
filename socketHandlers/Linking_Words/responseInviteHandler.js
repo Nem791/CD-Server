@@ -41,7 +41,9 @@ const responseInviteHandler = async (socket, data) => {
         });
 
         for (const user of room) {
-          io.to(user.socketId).emit("initiate-game", { senderId });
+          io.to(user.socketId).emit("initiate-game", {
+            participants: [senderId, receiverId],
+          });
         }
       } else {
         const senderSocketIds = severStore.getActiveConnections(
