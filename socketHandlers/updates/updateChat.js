@@ -68,6 +68,9 @@ const updateChatHistory = async (
       createdAt: {
         $first: "$createdAt",
       },
+    })
+    .sort({
+      createdAt: -1,
     });
   console.log("conversations: ", conversations);
 
@@ -123,7 +126,7 @@ const updateChatHistory = async (
 
   conversations[0]?.participants.forEach((userId) => {
     const activeConnections = severStore.getActiveConnections(
-      userId.toString()
+      String(userId._id)
     );
 
     activeConnections.forEach((socketId) => {
