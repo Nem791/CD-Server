@@ -116,7 +116,7 @@ exports.ReviewService = {
 
   getTodayReviewTests: async function () {
     const reviewReviewTest = await ReviewTestModel.find({
-      name: new Date().toLocaleDateString("pt-PT"),
+      // name: new Date().toLocaleDateString("pt-PT"),
       done: false,
     });
     return reviewReviewTest;

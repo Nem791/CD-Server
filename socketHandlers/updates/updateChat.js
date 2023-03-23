@@ -8,9 +8,10 @@ const updateChatHistory = async (
   toSpecifiedSocketId = null
   // => Để chỉ gửi lịch sử tin nhắn tới ng dùng dùng cụ thể
 ) => {
-  participants = participants
-    ? participants
-    : ["6415bc9ca508014d9c06e30c", "6415bc9ca508014d9c06e30c"];
+  // participants = participants
+  //   ? participants
+  //   : ["6415bc9ca508014d9c06e30c", "6415bc9ca508014d9c06e30c"];
+  console.log("participants: ", participants);
   const conversations = await Conversation.aggregate()
     .match({
       $and: [
@@ -72,13 +73,18 @@ const updateChatHistory = async (
 
   const io = severStore.getSocketServerInstance();
 
+  const lastestDocuments = await Conversation.aggregate().sort({
+    createdAt: -1,
+  });
+
   // 1. Gửi lịch sử tin nhắn đến 1 ng dùng đc chỉ định
   // (trg trường hợp 1 ng dùng bất kỳ yêu cầu xem lịch sử trò chuyện)
   if (toSpecifiedSocketId) {
     // (phát sự kiện xem lại lịch sử tin nhắn)
     return io.to(toSpecifiedSocketId).emit("direct-chat-history", {
       participants: conversations[0]?.participants,
-      conversations,
+      conversations:
+        conversations.length !== 0 ? conversations : lastestDocuments,
     });
   }
 
@@ -93,7 +99,8 @@ const updateChatHistory = async (
     activeConnections.forEach((socketId) => {
       io.to(socketId).emit("direct-chat-history", {
         participants: conversations[0]?.participants,
-        conversations,
+        conversations:
+          conversations.length !== 0 ? conversations : lastestDocuments,
       });
     });
   });
