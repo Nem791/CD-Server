@@ -70,7 +70,7 @@ const updateChatHistory = async (
       },
     })
     .sort({
-      createdAt: -1,
+      createdAt: 1,
     });
   console.log("conversations: ", conversations);
 
