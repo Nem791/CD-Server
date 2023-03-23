@@ -16,6 +16,20 @@ const responseInviteHandler = async (socket, data) => {
   try {
     const { accept, senderId, receiverId } = data;
     const invitation = await FriendInvitation.findOne({ senderId, receiverId });
+    const initiateGameData = await FriendInvitation.aggregate()
+      .match({ _id: invitation._id })
+      .lookup({
+        from: "users",
+        localField: "receiverId",
+        foreignField: "_id",
+        as: "receiverId",
+      })
+      .lookup({
+        from: "users",
+        localField: "senderId",
+        foreignField: "_id",
+        as: "senderId",
+      });
 
     if (invitation) {
       if (accept) {
@@ -42,7 +56,7 @@ const responseInviteHandler = async (socket, data) => {
 
         for (const user of room) {
           io.to(user.socketId).emit("initiate-game", {
-            participants: [senderId, receiverId],
+            participants: initiateGameData[0],
           });
         }
       } else {
