@@ -57,6 +57,7 @@ const responseInviteHandler = async (socket, data) => {
         for (const user of room) {
           io.to(user.socketId).emit("initiate-game", {
             participants: initiateGameData[0],
+            newConversation,
           });
         }
       } else {
