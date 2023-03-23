@@ -72,7 +72,7 @@ exports.QuizService = {
       //   quiz._id !== currentQuizId &&
       //   !recommendedQuizzes.includes(quiz._id)
       // ) {
-      recommendedQuizzes.push(quiz.title);
+      recommendedQuizzes.push(quiz);
       // }
       if (recommendedQuizzes.length >= 5) {
         break;
