@@ -73,9 +73,39 @@ const updateChatHistory = async (
 
   const io = severStore.getSocketServerInstance();
 
-  const lastestDocuments = await Conversation.aggregate().sort({
-    createdAt: -1,
-  });
+  const lastestDocuments = await Conversation.aggregate()
+    .match({
+      $and: [
+        {
+          participants: {
+            $all: [
+              {
+                $elemMatch: {
+                  $eq: new Types.ObjectId(participants[0]),
+                },
+              },
+              {
+                $elemMatch: {
+                  $eq: new Types.ObjectId(participants[1]),
+                },
+              },
+            ],
+          },
+        },
+      ],
+    })
+    .lookup({
+      from: "messages",
+      localField: "messages",
+      foreignField: "_id",
+      as: "messages",
+    })
+    .lookup({
+      from: "users",
+      localField: "participants",
+      foreignField: "_id",
+      as: "participants",
+    });
 
   // 1. Gửi lịch sử tin nhắn đến 1 ng dùng đc chỉ định
   // (trg trường hợp 1 ng dùng bất kỳ yêu cầu xem lịch sử trò chuyện)
