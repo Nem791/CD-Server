@@ -8,9 +8,10 @@ const updateChatHistory = async (
   toSpecifiedSocketId = null
   // => Để chỉ gửi lịch sử tin nhắn tới ng dùng dùng cụ thể
 ) => {
-  participants = participants
-    ? participants
-    : ["6415bc9ca508014d9c06e30c", "6415bc9ca508014d9c06e30c"];
+  // participants = participants
+  //   ? participants
+  //   : ["6415bc9ca508014d9c06e30c", "6415bc9ca508014d9c06e30c"];
+  console.log("participants: ", participants);
   const conversations = await Conversation.aggregate()
     .match({
       $and: [
