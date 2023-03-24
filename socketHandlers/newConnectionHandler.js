@@ -2,8 +2,7 @@ const serverStore = require("../severStore");
 const friendUpdate = require("../socketHandlers/updates/updateFriend");
 const chatUpdate = require("./updates/updateChatRoom");
 
-const newConnectionHandler = async (socket, io) => {
-  const userDetails = socket.handshake.auth?.user;
+const newConnectionHandler = async (socket, userDetails) => {
   serverStore.addNewConnectedUser({
     // socket.id: id của lượt kết nốt của ng dùng
     socketId: socket.id,

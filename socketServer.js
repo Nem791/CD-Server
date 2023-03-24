@@ -57,7 +57,7 @@ const registerSocketServer = (server) => {
 
     // On authenticate
     socket.on("authenticate", (data) => {
-      newConnectionHandler(socket, io);
+      newConnectionHandler(socket, data);
       // console.log("data: ", data);
     });
 
