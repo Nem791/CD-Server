@@ -1,10 +1,9 @@
 const Schedule = require("../../models/scheduleModel");
 
 const updateScheduleHandler = async (socket, data) => {
-  const { calendarEvent, selectedEventId } = data;
+  const { calendarEvent, selectedEventId, userId } = data;
 
   try {
-    const userId = socket.handshake.auth.user._id;
     const schedule = await Schedule.findByIdAndUpdate(
       selectedEventId,
       calendarEvent

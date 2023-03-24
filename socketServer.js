@@ -40,7 +40,6 @@ const registerSocketServer = (server) => {
 
   io.on("connection", (socket) => {
     console.log(`User Connected: ${socket.id}`);
-    // console.log(socket.handshake.auth?.user);
 
     // Thêm ng dùng vảo mảng những ng dùng đang online
     // newConnectionHandler(socket, io);
