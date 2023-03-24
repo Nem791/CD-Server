@@ -55,6 +55,12 @@ const registerSocketServer = (server) => {
       // });
     });
 
+    // On authenticate
+    socket.on("authenticate", (data) => {
+      // newConnectionHandler(socket, io);
+      console.log("data: ", data);
+    });
+
     // Event creat-card dc gửi từ Client
     socket.on("create-card", (data) => {
       // console.log(data);
