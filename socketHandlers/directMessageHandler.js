@@ -3,6 +3,7 @@ const Conversation = require("../models/conversationsModel");
 const chatUpdates = require("./updates/updateChat");
 const severStore = require("../severStore");
 const { Types } = require("mongoose");
+const User = require("../models/userModel");
 
 const directMessageHandler = async (socket, data) => {
   try {
@@ -52,9 +53,10 @@ const directMessageHandler = async (socket, data) => {
         const activeConnections = severStore.getActiveConnections(
           String(participant)
         );
-        console.log("game-over");
+
+        const winner = await User.findById(String(userId));
         io.to(activeConnections[0]).emit("game-over", {
-          winner: String(userId),
+          winner,
         });
       }
     } else {
