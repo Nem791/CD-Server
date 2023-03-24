@@ -2,9 +2,9 @@ const Schedule = require("../../models/scheduleModel");
 
 const createScheduleHandler = async (socket, data) => {
   try {
-    const userId = socket.handshake.auth.user._id;
+    const { userId, ...scheduleData } = data;
 
-    const schedule = await Schedule.create(data);
+    const schedule = await Schedule.create(scheduleData);
 
     const scheduleOfUser = await Schedule.find({
       createdBy: schedule.createdBy,

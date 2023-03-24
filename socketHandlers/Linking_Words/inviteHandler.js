@@ -6,8 +6,7 @@ const severStore = require("../../severStore");
 const inviteLinkingWordsHandler = async (socket, data) => {
   const io = severStore.getSocketServerInstance();
   try {
-    const { _id: userId } = socket.handshake.auth.user;
-    const { roomId } = data;
+    const { roomId, userId } = data;
     const invitedUsers = [];
 
     const conversation = await conversationsModel.findOne({

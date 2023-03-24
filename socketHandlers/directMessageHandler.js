@@ -7,9 +7,8 @@ const { Types } = require("mongoose");
 const directMessageHandler = async (socket, data) => {
   try {
     const io = severStore.getSocketServerInstance();
-    const { _id: userId } = socket.handshake.auth.user;
 
-    let { roomChatId, content, participants } = data;
+    let { roomChatId, content, participants, userId } = data;
 
     participants = [participants[0]?._id, participants[1]?._id];
     console.log("participants: ", participants);
