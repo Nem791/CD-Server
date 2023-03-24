@@ -43,7 +43,7 @@ const registerSocketServer = (server) => {
     // console.log(socket.handshake.auth?.user);
 
     // Thêm ng dùng vảo mảng những ng dùng đang online
-    newConnectionHandler(socket, io);
+    // newConnectionHandler(socket, io);
     emitOnlineUsers();
 
     // Event join-set
@@ -57,8 +57,8 @@ const registerSocketServer = (server) => {
 
     // On authenticate
     socket.on("authenticate", (data) => {
-      // newConnectionHandler(socket, io);
-      console.log("data: ", data);
+      newConnectionHandler(socket, io);
+      // console.log("data: ", data);
     });
 
     // Event creat-card dc gửi từ Client
