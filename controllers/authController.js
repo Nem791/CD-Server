@@ -85,7 +85,7 @@ exports.onAuthStateChanged = async (req, res) => {
     if (req.cookies.jwt) {
       token = req.cookies.jwt;
     }
-    console.log("token", token);
+
     if (!token) {
       return res.json({
         isLogin: false,
