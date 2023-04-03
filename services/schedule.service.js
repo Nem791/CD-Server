@@ -28,6 +28,7 @@ exports.ScheduleService = {
   },
 
   deleteSchedule: async function (id) {
+    console.log("id: ", id);
     const schedule = await Schedule.findByIdAndDelete(id);
     return schedule;
   },

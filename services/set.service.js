@@ -7,6 +7,14 @@ exports.SetService = {
     return set;
   },
 
+  getSets: async function (userId) {
+    const set = await Set.aggregate().match({
+      createdBy: new Types.ObjectId(userId),
+    });
+    console.log(set);
+    return set;
+  },
+
   createSet: async function (data) {
     const newSets = await Set.create(data);
     return newSets;

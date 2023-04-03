@@ -3,6 +3,7 @@ const catchAsync = require("../utils/catchAsync");
 const AppError = require("../utils/appError");
 
 const factory = require("./handlerFactory");
+const { UserService } = require("../services/user.service");
 
 const filterObj = (obj, ...allowedFields) => {
   const newObj = {};
@@ -55,6 +56,16 @@ exports.deleteMe = catchAsync(async (req, res, next) => {
     data: null,
   });
 });
+
+exports.getProfileData = catchAsync(async (req, res, next) => {
+  const data = await UserService.getProfileInfo(req.params.userId);
+
+  res.json({
+    status: "success",
+    data,
+  });
+});
+
 exports.getUser = factory.getOne(User);
 
 exports.createUser = (req, res) => {

@@ -59,6 +59,7 @@ exports.updateSchedule = catchAsync(async (req, res, next) => {
 });
 
 exports.deleteSchedule = catchAsync(async (req, res, next) => {
+  console.log("req.params.id: ", req.params.id);
   const schedule = await ScheduleService.deleteSchedule(req.params.id);
   if (!schedule) {
     return next(new AppError("No booking found with that ID", 404));
