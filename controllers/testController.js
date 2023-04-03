@@ -15,6 +15,12 @@ exports.createTest = catchAsync(async (req, res) => {
   });
 });
 
+exports.upload = catchAsync(async (req, res) => {
+  res.status(201).json({
+    status: "success",
+  });
+});
+
 exports.test = catchAsync(async (req, res) => {
   // const newTests = await QuizModel.find();
   const newTests = await TestService.test();

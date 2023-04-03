@@ -76,6 +76,8 @@ const userSchema = new mongoose.Schema(
       },
     ],
     paidAmount: { type: Number },
+    streak: { type: Array },
+    maxStreak: { type: Number, default: 0 },
   },
   {
     toJSON: { virtuals: true },

@@ -1,5 +1,7 @@
 const express = require("express");
 const cardController = require("../controllers/cardController");
+const multer = require("multer");
+const upload = multer({ storage: multer.memoryStorage() });
 
 const cardRouter = express.Router({ mergeParams: true });
 
@@ -8,7 +10,7 @@ cardRouter.route("/getAllCard").get(cardController.getCardsBySet);
 cardRouter
   .route("/")
   .get(cardController.getAllCards)
-  .post(cardController.createCard);
+  .post(upload.single("filename"), cardController.createCard);
 
 cardRouter
   .route("/:id")

@@ -38,4 +38,14 @@ exports.UserService = {
       });
     return data;
   },
+  updateLearningStreak: async (userId) => {
+    const user = User.findById(userId);
+    const givenDate = new Date("2023-04-03");
+    const today = new Date();
+
+    const isPreviousDay =
+      givenDate.getDate() === today.getDate() - 1 &&
+      givenDate.getMonth() === today.getMonth() &&
+      givenDate.getFullYear() === today.getFullYear();
+  },
 };

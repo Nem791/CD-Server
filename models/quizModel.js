@@ -29,6 +29,13 @@ const quizSchema = new mongoose.Schema({
     type: Date,
     default: Date.now,
   },
+  img: {
+    type: String,
+  },
+  deleted: {
+    type: Boolean,
+    default: false,
+  },
 });
 
 // testSchema.pre(/^find/, function (next) {

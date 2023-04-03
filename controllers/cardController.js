@@ -27,7 +27,7 @@ exports.getCard = catchAsync(async (req, res) => {
 });
 
 exports.createCard = catchAsync(async (req, res) => {
-  const newCard = await CardService.createCard(req.body);
+  const newCard = await CardService.createCard(req, res);
   res.status(201).json({
     status: "success",
     data: {
