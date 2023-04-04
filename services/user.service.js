@@ -39,13 +39,43 @@ exports.UserService = {
     return data;
   },
   updateLearningStreak: async (userId) => {
-    const user = User.findById(userId);
-    const givenDate = new Date("2023-04-03");
+    const user = await User.findById(userId);
+    const streaks = user.streaks;
+    let maxStreak = user.maxStreak;
     const today = new Date();
+    const updateOptions = { new: true, upsert: true };
+    let increaseValue = 1;
 
-    const isPreviousDay =
-      givenDate.getDate() === today.getDate() - 1 &&
-      givenDate.getMonth() === today.getMonth() &&
-      givenDate.getFullYear() === today.getFullYear();
+    if (streaks.length !== 0) {
+      const givenDate = new Date(streaks.at(-1));
+      const isPreviousDay =
+        givenDate.getDate() === today.getDate() - 1 &&
+        givenDate.getMonth() === today.getMonth() &&
+        givenDate.getFullYear() === today.getFullYear();
+
+      if (isPreviousDay) {
+        maxStreak = maxStreak === streaks.length ? maxStreak + 1 : maxStreak;
+        const date = today.toLocaleDateString();
+        console.log("date: ", date);
+        const user = await User.findByIdAndUpdate(
+          userId,
+          { $set: { maxStreak }, $addToSet: { streaks: date } },
+          updateOptions
+        );
+        return user;
+      } else {
+        increaseValue = 0;
+      }
+    }
+
+    const updatedUser = await User.findByIdAndUpdate(
+      userId,
+      {
+        $inc: { maxStreak: increaseValue },
+        $set: { streaks: [today.toLocaleDateString()] },
+      },
+      updateOptions
+    );
+    return updatedUser;
   },
 };

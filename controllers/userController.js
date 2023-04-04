@@ -66,6 +66,15 @@ exports.getProfileData = catchAsync(async (req, res, next) => {
   });
 });
 
+exports.updateLearningStreak = catchAsync(async (req, res, next) => {
+  const data = await UserService.updateLearningStreak(req.params.userId);
+
+  res.json({
+    status: "success",
+    data,
+  });
+});
+
 exports.getUser = factory.getOne(User);
 
 exports.createUser = (req, res) => {
