@@ -53,6 +53,11 @@ exports.UserService = {
         givenDate.getMonth() === today.getMonth() &&
         givenDate.getFullYear() === today.getFullYear();
 
+      const isToday =
+        givenDate.getDate() === today.getDate() &&
+        givenDate.getMonth() === today.getMonth() &&
+        givenDate.getFullYear() === today.getFullYear();
+
       if (isPreviousDay) {
         maxStreak = maxStreak === streaks.length ? maxStreak + 1 : maxStreak;
         const date = today.toLocaleDateString();
@@ -62,6 +67,8 @@ exports.UserService = {
           { $set: { maxStreak }, $addToSet: { streaks: date } },
           updateOptions
         );
+        return user;
+      } else if (isToday) {
         return user;
       } else {
         increaseValue = 0;
