@@ -65,8 +65,12 @@ exports.CardService = {
 
     console.log("File successfully uploaded.");
 
-    // const newCard = await Card.create(data);
-    return downloadURL;
+    const data = req.body;
+    data.setId = new Types.ObjectId(data.setId);
+    data.mimeType = mimeType;
+    data.fileUrl = downloadURL;
+    const newCard = await Card.create(data);
+    return newCard;
   },
 
   updateCard: async function (id, data) {

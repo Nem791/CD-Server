@@ -26,7 +26,8 @@ const cardSchema = new mongoose.Schema({
   ],
   synonyms: [String],
   antonyms: [String],
-  images: String,
+  fileUrl: String,
+  mimeType: String,
   pronounce: String,
   createdAt: { type: Date, default: Date.now() },
   createdBy: {
