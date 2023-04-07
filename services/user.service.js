@@ -1,6 +1,7 @@
 const { Types } = require("mongoose");
 const Set = require("../models/setModel");
 const User = require("../models/userModel");
+const severStore = require("../severStore");
 
 exports.UserService = {
   getProfileInfo: async function (userId) {
@@ -39,6 +40,9 @@ exports.UserService = {
     return data;
   },
   updateLearningStreak: async (userId) => {
+    const io = severStore.getSocketServerInstance();
+    const userSocketId = severStore.getActiveConnections(String(userId));
+
     const user = await User.findById(userId);
     const streaks = user.streaks;
     let maxStreak = user.maxStreak;
@@ -61,12 +65,16 @@ exports.UserService = {
       if (isPreviousDay) {
         maxStreak = maxStreak === streaks.length ? maxStreak + 1 : maxStreak;
         const date = today.toLocaleDateString();
-        console.log("date: ", date);
         const user = await User.findByIdAndUpdate(
           userId,
           { $set: { maxStreak }, $addToSet: { streaks: date } },
           updateOptions
         );
+
+        io.to(userSocketId[0]).emit("streak-added", {
+          streaks: user.streaks,
+        });
+
         return user;
       } else if (isToday) {
         return user;
@@ -83,6 +91,10 @@ exports.UserService = {
       },
       updateOptions
     );
+
+    io.to(userSocketId[0]).emit("streak-added", {
+      streaks: user.streaks,
+    });
     return updatedUser;
   },
 };
