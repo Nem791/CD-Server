@@ -46,7 +46,7 @@ exports.getSets = catchAsync(async (req, res, next) => {
 });
 
 exports.updateSet = catchAsync(async (req, res, next) => {
-  const set = await SetService.updateSet(req.params.setId, req.body);
+  const set = await SetService.updateSet(req, res);
 
   if (!set) {
     return next(new AppError("No document found with that ID", 404));
