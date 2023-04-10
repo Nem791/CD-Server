@@ -69,7 +69,10 @@ exports.CardService = {
     data.setId = new Types.ObjectId(data.setId);
     data.mimeType = mimeType;
     data.fileUrl = downloadURL;
-    const newCard = await Card.create(data);
+    const newCard = await Card.create({
+      ...data,
+      meanings: JSON.parse(data?.meanings[0]),
+    });
     return newCard;
   },
 
