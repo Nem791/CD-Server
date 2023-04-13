@@ -1,6 +1,5 @@
 const { Types } = require("mongoose");
 const LeaderboardModel = require("../models/leaderboardModel");
-const Set = require("../models/setModel");
 
 exports.LeaderboardService = {
   getLearderboardByQuiz: async function (quizId) {

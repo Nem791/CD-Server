@@ -4,7 +4,8 @@ const User = require("../models/userModel");
 
 const stripe = require("stripe")(process.env.STRIPE_PUBLIC_API_KEY);
 
-const DOMAIN = "http://localhost:3000";
+const DOMAIN = "http://localhost:8888";
+const SUCCESS_DOMAIN = "http://localhost:8888/payment-success";
 
 exports.TransactionService = {
   createTransaction: async function (data) {
@@ -49,7 +50,7 @@ exports.TransactionService = {
         },
       ],
       mode: "payment",
-      success_url: `${DOMAIN}`,
+      success_url: `${SUCCESS_DOMAIN}`,
       cancel_url: `${DOMAIN}`,
       metadata: {
         user,

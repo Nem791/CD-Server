@@ -7,6 +7,7 @@ const Test = require("../models/testModel");
 const calculateRating = require("../utils/calculateRating");
 const calculateSM_2 = require("../utils/sm-2");
 const { LeaderboardService } = require("./leaderboard.service");
+const { UserService } = require("./user.service");
 
 const reviewTestQueue = new ReviewTestBullQueue();
 
@@ -45,6 +46,8 @@ exports.ReviewService = {
     const reviewTests = {};
     const reviewQuestions = [];
     const userId = new Types.ObjectId(data[0].user);
+
+    await UserService.updateLearningStreak(String(userId));
 
     let setId;
     let quizId;
