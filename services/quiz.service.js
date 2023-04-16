@@ -67,8 +67,24 @@ exports.QuizService = {
     }
   },
 
-  getAllQuizzes: async function (id) {
-    const quizzes = await QuizModel.find({});
+  getAllQuizzes: async function () {
+    const quizzes = await QuizModel.aggregate()
+      .lookup({
+        from: "sets",
+        localField: "setId",
+        foreignField: "_id",
+        as: "setId",
+      })
+      .match({
+        $or: [
+          { "setId.approved": true },
+          {
+            setId: {
+              $size: 0,
+            },
+          },
+        ],
+      });
     return quizzes;
   },
 
