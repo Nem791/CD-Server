@@ -7,6 +7,8 @@ const {
   getDownloadURL,
   uploadBytesResumable,
 } = require("firebase/storage");
+const { QuizService } = require("./quiz.service");
+const QuizModel = require("../models/quizModel");
 
 const firebaseConfig = {
   apiKey: process.env.FIREBASE_API_KEY,
@@ -29,11 +31,24 @@ exports.SetService = {
   },
 
   getSets: async function (userId) {
-    const set = await Set.aggregate().match({
-      createdBy: new Types.ObjectId(userId),
-    });
-    console.log(set);
-    return set;
+    try {
+      const set = await Set.aggregate().match({
+        createdBy: new Types.ObjectId(userId),
+      });
+
+      return set;
+    } catch (error) {
+      console.log(error);
+    }
+  },
+
+  getAllSets: async function () {
+    try {
+      const sets = await Set.find({ approved: true });
+      return sets;
+    } catch (error) {
+      console.log(error);
+    }
   },
 
   createSet: async function (data) {
@@ -75,13 +90,24 @@ exports.SetService = {
       // (trả về document mới nhất)
       runValidators: true,
       // (có chạy trình validate)
+      upsert: true,
     });
 
     return set;
   },
 
+  approveSet: async function (id) {
+    const set = await Set.findByIdAndUpdate(
+      id,
+      { approved: true },
+      { new: true }
+    );
+    return set;
+  },
+
   deleteSet: async function (id) {
-    const set = await Set.findByIdAndDelele(id);
+    const set = await Set.findByIdAndDelete(id);
+    const quiz = await QuizModel.findOneAndDelete({ setId: set._id });
     return set;
   },
 };

@@ -21,6 +21,10 @@ const setSchema = new mongoose.Schema({
     type: mongoose.Schema.ObjectId,
     ref: "Card",
   },
+  approved: {
+    type: Boolean,
+    default: false,
+  },
 });
 
 // Populate cho tất cả các query dùng find

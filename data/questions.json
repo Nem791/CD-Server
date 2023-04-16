@@ -6,7 +6,7 @@
   "quiz": {
     "$oid": "640814263540faff47c65d06"
   },
-  "answer": "C",
+  "answer": "The Weimar Republic",
   "createdAt": "2023-03-08 12:02:01",
   "question": "The interim government in Germany between WWI and the rise of the Nazi party was known as",
   "options": [
@@ -23,7 +23,7 @@
   "quiz": {
     "$oid": "640814263540faff47c65d06"
   },
-  "answer": "C",
+  "answer": "The Soviet Union and Finland",
   "createdAt": "2023-03-08 12:02:01",
   "question": "The Aunchluss, or Union, occured in 1938 between two countries?",
   "options": [
@@ -40,7 +40,7 @@
   "quiz": {
     "$oid": "640814263540faff47c65d06"
   },
-  "answer": "C",
+  "answer": "Germany and Italy",
   "createdAt": "2023-03-08 12:02:01",
   "question": "Von Ribbentrop signed the Non-Aggression pact in 1939 between",
   "options": [
@@ -57,7 +57,7 @@
   "quiz": {
     "$oid": "640814263540faff47c65d06"
   },
-  "answer": "C",
+  "answer": "Wake Island",
   "createdAt": "2023-03-08 12:02:01",
   "question": "At the beginning of the war in the Pacific theatre a contingent of U.S. troops under General MacArthur was forced to surrender at",
   "options": [
@@ -74,7 +74,7 @@
   "quiz": {
     "$oid": "640814263540faff47c65d06"
   },
-  "answer": "C",
+  "answer": "Norway",
   "createdAt": "2023-03-08 12:02:01",
   "question": "During the Battle of France the Germans bypassed the Maginot Line by attacking through",
   "options": [
@@ -91,7 +91,7 @@
   "quiz": {
     "$oid": "640814263540faff47c65d06"
   },
-  "answer": "C",
+  "answer": "The K98",
   "createdAt": "2023-03-08 12:02:01",
   "question": "The main battle rifle of the German Army during the war was known as",
   "options": [
@@ -108,7 +108,7 @@
   "quiz": {
     "$oid": "640814263540faff47c65d06"
   },
-  "answer": "C",
+  "answer": "The Spitfire",
   "createdAt": "2023-03-08 12:02:01",
   "question": "What fighter plane from WWII has become the most produced fighter in history?",
   "options": [
@@ -125,7 +125,7 @@
   "quiz": {
     "$oid": "640814263540faff47c65d06"
   },
-  "answer": "C",
+  "answer": "Midget Sub",
   "createdAt": "2023-03-08 12:02:01",
   "question": "The German submarine that attempted to strangle the supply lines to Britain was called the",
   "options": [
@@ -142,7 +142,7 @@
   "quiz": {
     "$oid": "640814263540faff47c65d06"
   },
-  "answer": "C",
+  "answer": "True",
   "createdAt": "2023-03-08 12:02:01",
   "question": "The Japanese Zero was superior to American fighter aircraft at the beginning of the war in the Pacific",
   "options": [
@@ -157,7 +157,7 @@
   "quiz": {
     "$oid": "640814263540faff47c65d06"
   },
-  "answer": "C",
+  "answer": "The Plans for the Invasion of England",
   "createdAt": "2023-03-08 12:02:01",
   "question": "Operation Barbarossa was",
   "options": [
@@ -174,7 +174,7 @@
   "quiz": {
     "$oid": "640814263540faff47c65d06"
   },
-  "answer": "C",
+  "answer": "Chamberlain",
   "createdAt": "2023-03-08 12:02:01",
   "question": "The prime minister of England prior to Winston Churchill was",
   "options": [
@@ -191,7 +191,7 @@
   "quiz": {
     "$oid": "640814263540faff47c65d06"
   },
-  "answer": "C",
+  "answer": "Establish the policy of unconditional surrender",
   "createdAt": "2023-03-08 12:02:01",
   "question": "The purpose of the Potsdam Conference was to",
   "options": [
@@ -208,7 +208,7 @@
   "quiz": {
     "$oid": "640814263540faff47c65d06"
   },
-  "answer": "C",
+  "answer": "Guadacanal",
   "createdAt": "2023-03-08 12:02:01",
   "question": "The battle of Leyte Gulf was a naval engagement during this larger battle",
   "options": [
@@ -225,7 +225,7 @@
   "quiz": {
     "$oid": "640814263540faff47c65d06"
   },
-  "answer": "C",
+  "answer": "True",
   "createdAt": "2023-03-08 12:02:01",
   "question": "Italy switched sides during the war",
   "options": [
@@ -240,7 +240,7 @@
   "quiz": {
     "$oid": "640814263540faff47c65d06"
   },
-  "answer": "C",
+  "answer": "Khruschev",
   "createdAt": "2023-03-08 12:02:01",
   "question": "The most famous Soviet commander was",
   "options": [
@@ -257,7 +257,7 @@
   "quiz": {
     "$oid": "640814263540faff47c65d06"
   },
-  "answer": "C",
+  "answer": "Flak30 20mm",
   "createdAt": "2023-03-08 12:02:01",
   "question": "The most famous German gun of the war was the",
   "options": [
@@ -274,7 +274,7 @@
   "quiz": {
     "$oid": "640814263540faff47c65d06"
   },
-  "answer": "C",
+  "answer": "Von Richtofen",
   "createdAt": "2023-03-08 12:02:01",
   "question": "This man was a member of The Red Baron's fighter squadron and commander of the Luftwaffe during WWII.",
   "options": [
@@ -291,7 +291,7 @@
   "quiz": {
     "$oid": "640814263540faff47c65d06"
   },
-  "answer": "C",
+  "answer": "Dowding",
   "createdAt": "2023-03-08 12:02:01",
   "question": "The most famous British general of the war was",
   "options": [
@@ -308,7 +308,7 @@
   "quiz": {
     "$oid": "640814263540faff47c65d06"
   },
-  "answer": "C",
+  "answer": "Churchill",
   "createdAt": "2023-03-08 12:02:01",
   "question": "The Supreme Commander of the Western Allied forces was",
   "options": [
@@ -325,7 +325,7 @@
   "quiz": {
     "$oid": "640814263540faff47c65d06"
   },
-  "answer": "C",
+  "answer": "An Italian General",
   "createdAt": "2023-03-08 12:02:01",
   "question": "Monte Cassino was",
   "options": [
@@ -342,7 +342,7 @@
   "quiz": {
     "$oid": "640814263540faff47c65d06"
   },
-  "answer": "C",
+  "answer": "Sevastapool",
   "createdAt": "2023-03-08 12:02:01",
   "question": "The main battle tank of the Soviet Union at the time was the",
   "options": [
@@ -359,7 +359,7 @@
   "quiz": {
     "$oid": "640814263540faff47c65d06"
   },
-  "answer": "C",
+  "answer": "True",
   "createdAt": "2023-03-08 12:02:01",
   "question": "Jet fighters never flew in operational combat during World War II",
   "options": [
@@ -374,7 +374,7 @@
   "quiz": {
     "$oid": "640814263540faff47c65d06"
   },
-  "answer": "C",
+  "answer": "Tirpitz",
   "createdAt": "2023-03-08 12:02:01",
   "question": "What was sister-ship of the German Bismarck battleship?",
   "options": [
@@ -391,7 +391,7 @@
   "quiz": {
     "$oid": "640814263540faff47c65d06"
   },
-  "answer": "C",
+  "answer": "British Blackburn",
   "createdAt": "2023-03-08 12:02:01",
   "question": "The premiere divebombing aeroplane of 1940 was known as",
   "options": [
@@ -408,7 +408,7 @@
   "quiz": {
     "$oid": "640814263540faff47c65d06"
   },
-  "answer": "C",
+  "answer": "Guadacanal",
   "createdAt": "2023-03-08 12:02:01",
   "question": "The landings at Anzio were during this campaign",
   "options": [
@@ -425,7 +425,7 @@
   "quiz": {
     "$oid": "640814263540faff47c65d07"
   },
-  "answer": "C",
+  "answer": "Murder of Berlin",
   "createdAt": "2023-03-08 13:48:13",
   "question": "The main reason for world war first?\n ",
   "options": [
@@ -442,7 +442,7 @@
   "quiz": {
     "$oid": "640814263540faff47c65d07"
   },
-  "answer": "C",
+  "answer": "Nationalism",
   "createdAt": "2023-03-08 13:48:13",
   "question": "This is not a cause of WWI.\n ",
   "options": [
@@ -459,7 +459,7 @@
   "quiz": {
     "$oid": "640814263540faff47c65d07"
   },
-  "answer": "C",
+  "answer": "USA",
   "createdAt": "2023-03-08 13:48:13",
   "question": "Select the countries that were not in the Triple Entente in the year 1914.\n ",
   "options": [
@@ -476,7 +476,7 @@
   "quiz": {
     "$oid": "640814263540faff47c65d07"
   },
-  "answer": "C",
+  "answer": "Battle of Gallipoli",
   "createdAt": "2023-03-08 13:48:13",
   "question": "Which of these was not a major battle of WWI?\n",
   "options": [
@@ -493,7 +493,7 @@
   "quiz": {
     "$oid": "640814263540faff47c65d07"
   },
-  "answer": "C",
+  "answer": "1914",
   "createdAt": "2023-03-08 13:48:13",
   "question": "The battle of Verdun started in",
   "options": [
@@ -510,7 +510,7 @@
   "quiz": {
     "$oid": "640814263540faff47c65d07"
   },
-  "answer": "C",
+  "answer": "It's a type of strategy to defeat the enemy by careful movements and manipulation.",
   "createdAt": "2023-03-08 13:48:13",
   "question": "Manoeuvre warfare is\n",
   "options": [
@@ -527,7 +527,7 @@
   "quiz": {
     "$oid": "640814263540faff47c65d07"
   },
-  "answer": "C",
+  "answer": "Between 1914-1917",
   "createdAt": "2023-03-08 13:48:13",
   "question": "Attrition warfare took place during which years?\n",
   "options": [
@@ -544,7 +544,7 @@
   "quiz": {
     "$oid": "640814263540faff47c65d07"
   },
-  "answer": "C",
+  "answer": "India",
   "createdAt": "2023-03-08 13:48:13",
   "question": "The country that made the first declaration of war was\n",
   "options": [
@@ -561,7 +561,7 @@
   "quiz": {
     "$oid": "640814263540faff47c65d07"
   },
-  "answer": "C",
+  "answer": "The attack on France",
   "createdAt": "2023-03-08 13:48:13",
   "question": "The German attack that provoked Britain to go to war was \n",
   "options": [
@@ -578,7 +578,7 @@
   "quiz": {
     "$oid": "640814263540faff47c65d07"
   },
-  "answer": "C",
+  "answer": "Romania",
   "createdAt": "2023-03-08 13:48:13",
   "question": "_______ joined the war, taking the side of the Allied Powers in 1916.\n",
   "options": [
@@ -595,7 +595,7 @@
   "quiz": {
     "$oid": "640814263540faff47c65d09"
   },
-  "answer": "C",
+  "answer": "1923",
   "createdAt": "2023-03-08 14:05:49",
   "question": "In which year did World War I begin?\n",
   "options": [
@@ -612,7 +612,7 @@
   "quiz": {
     "$oid": "640814263540faff47c65d09"
   },
-  "answer": "C",
+  "answer": "France",
   "createdAt": "2023-03-08 14:05:49",
   "question": "In which country was Adolf Hitler born?\n",
   "options": [
@@ -629,7 +629,7 @@
   "quiz": {
     "$oid": "640814263540faff47c65d09"
   },
-  "answer": "C",
+  "answer": "New York",
   "createdAt": "2023-03-08 14:05:49",
   "question": "Where was John F. Kennedy assassinated?\n",
   "options": [
@@ -646,7 +646,7 @@
   "quiz": {
     "$oid": "640814263540faff47c65d09"
   },
-  "answer": "C",
+  "answer": "Andrew Jackson",
   "createdAt": "2023-03-08 14:05:49",
   "question": "Who fought in the war of 1812?\n",
   "options": [
@@ -663,7 +663,7 @@
   "quiz": {
     "$oid": "640814263540faff47c65d09"
   },
-  "answer": "C",
+  "answer": "Bull Halsey",
   "createdAt": "2023-03-08 14:05:49",
   "question": "Which general famously stated, 'I shall return?'\n",
   "options": [
@@ -680,7 +680,7 @@
   "quiz": {
     "$oid": "640814263540faff47c65d09"
   },
-  "answer": "C",
+  "answer": "1970s",
   "createdAt": "2023-03-08 14:05:49",
   "question": "In which decade did American involvement in the Korean War take place?\n",
   "options": [
@@ -697,7 +697,7 @@
   "quiz": {
     "$oid": "640814263540faff47c65d09"
   },
-  "answer": "C",
+  "answer": "France",
   "createdAt": "2023-03-08 14:05:49",
   "question": "In which country was the Battle of Hastings in 1066 fought?\n ",
   "options": [
@@ -714,7 +714,7 @@
   "quiz": {
     "$oid": "640814263540faff47c65d09"
   },
-  "answer": "C",
+  "answer": "France",
   "createdAt": "2023-03-08 14:05:49",
   "question": "By the king of which country was the Magna Carta published?\n",
   "options": [
@@ -731,7 +731,7 @@
   "quiz": {
     "$oid": "640814263540faff47c65d09"
   },
-  "answer": "C",
+  "answer": "Johannes Gutenberg",
   "createdAt": "2023-03-08 14:05:49",
   "question": "The first successful printing press was developed by this man.\n ",
   "options": [
@@ -748,7 +748,7 @@
   "quiz": {
     "$oid": "640814263540faff47c65d09"
   },
-  "answer": "C",
+  "answer": "The White Death",
   "createdAt": "2023-03-08 14:05:49",
   "question": "The disease that ravaged and killed a third of Europe's population in the 14th century is known as:\n",
   "options": [
@@ -765,7 +765,7 @@
   "quiz": {
     "$oid": "640814263540faff47c65d09"
   },
-  "answer": "C",
+  "answer": "Italy and Carthage",
   "createdAt": "2023-03-08 14:05:49",
   "question": "Between which two countries was the Hundred Years War fought?\n",
   "options": [
@@ -782,7 +782,7 @@
   "quiz": {
     "$oid": "640814263540faff47c65d09"
   },
-  "answer": "C",
+  "answer": "Marcus Aurelius",
   "createdAt": "2023-03-08 14:05:49",
   "question": "Which Roman Emperor built a massive wall across Northern Britain in 122 A.D.?\n",
   "options": [
@@ -799,7 +799,7 @@
   "quiz": {
     "$oid": "640814263540faff47c65d09"
   },
-  "answer": "C",
+  "answer": "Martin Luther",
   "createdAt": "2023-03-08 14:05:49",
   "question": "This man wrote a document known as the 95 Theses.\n ",
   "options": [
@@ -816,7 +816,7 @@
   "quiz": {
     "$oid": "640814263540faff47c65d09"
   },
-  "answer": "C",
+  "answer": "Broadway",
   "createdAt": "2023-03-08 14:05:49",
   "question": "In 1594, William Shakespeare joined the company of this London theatre.\n ",
   "options": [
@@ -833,7 +833,7 @@
   "quiz": {
     "$oid": "640814263540faff47c65d09"
   },
-  "answer": "C",
+  "answer": "Vietnam",
   "createdAt": "2023-03-08 14:05:49",
   "question": "The Khmer Rouge was a regime ruling this nation in the 20th century.\n ",
   "options": [
@@ -850,7 +850,7 @@
   "quiz": {
     "$oid": "640814263540faff47c65d09"
   },
-  "answer": "C",
+  "answer": "Hannibal",
   "createdAt": "2023-03-08 14:05:49",
   "question": "What famous 5th century A.D conqueror was known as 'The Scourge of God?'\n ",
   "options": [
@@ -867,7 +867,7 @@
   "quiz": {
     "$oid": "640814263540faff47c65d09"
   },
-  "answer": "C",
+  "answer": "Henry Repeating Rifle",
   "createdAt": "2023-03-08 14:05:49",
   "question": "What famous rifle is known in America as 'The Gun that Won the West?'\n",
   "options": [
@@ -884,7 +884,7 @@
   "quiz": {
     "$oid": "640814263540faff47c65d09"
   },
-  "answer": "C",
+  "answer": "Magellan",
   "createdAt": "2023-03-08 14:05:49",
   "question": "Who was the first Western explorer to reach China?\n",
   "options": [
@@ -901,7 +901,7 @@
   "quiz": {
     "$oid": "640834dd45fc9c15f561509e"
   },
-  "answer": "C",
+  "answer": "Cold, but not too much",
   "createdAt": "2023-03-08 14:11:00",
   "question": "Do you like cold or warm weather more?",
   "options": [
@@ -918,7 +918,7 @@
   "quiz": {
     "$oid": "640834dd45fc9c15f561509e"
   },
-  "answer": "C",
+  "answer": "Not that much",
   "createdAt": "2023-03-08 14:11:00",
   "question": "How much do you enjoy drinking?",
   "options": [
@@ -935,7 +935,7 @@
   "quiz": {
     "$oid": "640834dd45fc9c15f561509e"
   },
-  "answer": "C",
+  "answer": "No",
   "createdAt": "2023-03-08 14:11:00",
   "question": "Are you fond of history?",
   "options": [
@@ -952,7 +952,7 @@
   "quiz": {
     "$oid": "640834dd45fc9c15f561509e"
   },
-  "answer": "C",
+  "answer": "A big city",
   "createdAt": "2023-03-08 14:11:00",
   "question": "Would you rather live in/on...",
   "options": [
@@ -975,7 +975,7 @@
   "quiz": {
     "$oid": "640834dd45fc9c15f561509e"
   },
-  "answer": "C",
+  "answer": "BLACK METAAAAL!!",
   "createdAt": "2023-03-08 14:11:00",
   "question": "What type of music do you like?",
   "options": [
@@ -995,7 +995,7 @@
   "quiz": {
     "$oid": "640834dd45fc9c15f561509e"
   },
-  "answer": "C",
+  "answer": "Active!",
   "createdAt": "2023-03-08 14:11:00",
   "question": "Which of these adjectives suits you best?",
   "options": [
@@ -1018,7 +1018,7 @@
   "quiz": {
     "$oid": "640834dd45fc9c15f561509e"
   },
-  "answer": "C",
+  "answer": "ALL THE TIME",
   "createdAt": "2023-03-08 14:11:00",
   "question": "Do you often party?",
   "options": [
@@ -1035,7 +1035,7 @@
   "quiz": {
     "$oid": "640834dd45fc9c15f561509e"
   },
-  "answer": "C",
+  "answer": "Of course, I would",
   "createdAt": "2023-03-08 14:11:00",
   "question": "Would you like to live surrounded by nature??",
   "options": [
@@ -1052,7 +1052,7 @@
   "quiz": {
     "$oid": "640834dd45fc9c15f561509e"
   },
-  "answer": "C",
+  "answer": "I'm egocentric",
   "createdAt": "2023-03-08 14:11:00",
   "question": "Something bad about you:",
   "options": [
@@ -1069,7 +1069,7 @@
   "quiz": {
     "$oid": "640834dd45fc9c15f561509e"
   },
-  "answer": "C",
+  "answer": "Very much",
   "createdAt": "2023-03-08 14:11:00",
   "question": "How much do you love crowd?",
   "options": [
@@ -1086,7 +1086,7 @@
   "quiz": {
     "$oid": "640834dd45fc9c15f56150a0"
   },
-  "answer": "C",
+  "answer": "San Juan",
   "createdAt": "2023-03-08 14:14:15",
   "question": "Mexico's capital is___________. ",
   "options": [
@@ -1103,7 +1103,7 @@
   "quiz": {
     "$oid": "640834dd45fc9c15f56150a0"
   },
-  "answer": "C",
+  "answer": "San Salvador",
   "createdAt": "2023-03-08 14:14:15",
   "question": "The capital of Guatemala is ______________. ",
   "options": [
@@ -1120,7 +1120,7 @@
   "quiz": {
     "$oid": "640834dd45fc9c15f56150a0"
   },
-  "answer": "C",
+  "answer": "Tegucigatpa",
   "createdAt": "2023-03-08 14:14:15",
   "question": "The capital of Hondoras is ____________. ",
   "options": [
@@ -1137,7 +1137,7 @@
   "quiz": {
     "$oid": "640834dd45fc9c15f56150a0"
   },
-  "answer": "C",
+  "answer": "Santo Domingo",
   "createdAt": "2023-03-08 14:14:15",
   "question": "What is the capital of El Salvador?",
   "options": [
@@ -1154,7 +1154,7 @@
   "quiz": {
     "$oid": "640834dd45fc9c15f56150a0"
   },
-  "answer": "C",
+  "answer": "Quito",
   "createdAt": "2023-03-08 14:14:15",
   "question": "The capital of Nicaragua is ___________. ",
   "options": [
@@ -1171,7 +1171,7 @@
   "quiz": {
     "$oid": "640834dd45fc9c15f56150a0"
   },
-  "answer": "C",
+  "answer": "San Jose",
   "createdAt": "2023-03-08 14:14:15",
   "question": "What's the capital of Costa Rica?",
   "options": [
@@ -1188,7 +1188,7 @@
   "quiz": {
     "$oid": "640834dd45fc9c15f56150a0"
   },
-  "answer": "C",
+  "answer": "Montevideo",
   "createdAt": "2023-03-08 14:14:15",
   "question": "Which of these is the capital of Panama?",
   "options": [
@@ -1205,7 +1205,7 @@
   "quiz": {
     "$oid": "640834dd45fc9c15f56150a0"
   },
-  "answer": "C",
+  "answer": "Santo Domingo",
   "createdAt": "2023-03-08 14:14:15",
   "question": "The capital of Cuba is _______. ",
   "options": [
@@ -1222,7 +1222,7 @@
   "quiz": {
     "$oid": "640834dd45fc9c15f56150a0"
   },
-  "answer": "C",
+  "answer": "San Salvador",
   "createdAt": "2023-03-08 14:14:15",
   "question": "Republica Dominicana's capital is ____________. ",
   "options": [
@@ -1239,7 +1239,7 @@
   "quiz": {
     "$oid": "640834dd45fc9c15f56150a0"
   },
-  "answer": "C",
+  "answer": "San Salvador",
   "createdAt": "2023-03-08 14:14:15",
   "question": "Name the capital of Puerto Rico. ",
   "options": [
@@ -1256,7 +1256,7 @@
   "quiz": {
     "$oid": "640834dd45fc9c15f56150a0"
   },
-  "answer": "C",
+  "answer": "Caracas",
   "createdAt": "2023-03-08 14:14:15",
   "question": "\nWhat is the capital of Venezuela?\n",
   "options": [
@@ -1273,7 +1273,7 @@
   "quiz": {
     "$oid": "640834dd45fc9c15f56150a0"
   },
-  "answer": "C",
+  "answer": "Bogota",
   "createdAt": "2023-03-08 14:14:15",
   "question": "Name the capital of Colombia. ",
   "options": [
@@ -1290,7 +1290,7 @@
   "quiz": {
     "$oid": "640834dd45fc9c15f56150a0"
   },
-  "answer": "C",
+  "answer": "Lima",
   "createdAt": "2023-03-08 14:14:15",
   "question": "Identify the capital of Ecuador. ",
   "options": [
@@ -1307,7 +1307,7 @@
   "quiz": {
     "$oid": "640834dd45fc9c15f56150a0"
   },
-  "answer": "C",
+  "answer": "Bogota",
   "createdAt": "2023-03-08 14:14:15",
   "question": "Name the capital of Peru. ",
   "options": [
@@ -1324,7 +1324,7 @@
   "quiz": {
     "$oid": "640834dd45fc9c15f56150a0"
   },
-  "answer": "C",
+  "answer": "San Jose & San Juan",
   "createdAt": "2023-03-08 14:14:15",
   "question": "The capital of Bolivia is _______. ",
   "options": [
@@ -1341,7 +1341,7 @@
   "quiz": {
     "$oid": "640834dd45fc9c15f56150a0"
   },
-  "answer": "C",
+  "answer": "San Salvador",
   "createdAt": "2023-03-08 14:14:15",
   "question": "The capital of Chile is _________. ",
   "options": [
@@ -1358,7 +1358,7 @@
   "quiz": {
     "$oid": "640834dd45fc9c15f56150a0"
   },
-  "answer": "C",
+  "answer": "Mexico City",
   "createdAt": "2023-03-08 14:14:15",
   "question": "What is the capital of Paraguay?",
   "options": [
@@ -1375,7 +1375,7 @@
   "quiz": {
     "$oid": "640834dd45fc9c15f56150a0"
   },
-  "answer": "C",
+  "answer": "Buenos Aires",
   "createdAt": "2023-03-08 14:14:15",
   "question": "What's the capital of Argentina?",
   "options": [
@@ -1392,7 +1392,7 @@
   "quiz": {
     "$oid": "640834dd45fc9c15f56150a0"
   },
-  "answer": "C",
+  "answer": "Santiago",
   "createdAt": "2023-03-08 14:14:15",
   "question": "Name the capital of Uruguay. ",
   "options": [
@@ -1409,7 +1409,7 @@
   "quiz": {
     "$oid": "640834dd45fc9c15f56150a0"
   },
-  "answer": "C",
+  "answer": "Madrid",
   "createdAt": "2023-03-08 14:14:15",
   "question": "Identify the capital of Espana. (Spain)",
   "options": [
@@ -1426,7 +1426,7 @@
   "quiz": {
     "$oid": "640834dd45fc9c15f561509f"
   },
-  "answer": "C",
+  "answer": "Switzerland",
   "createdAt": "2023-03-08 14:16:09",
   "question": "What country am I in? I have witnessed Big Ben and Buckingham Palace, and also seen two Princes by the names of William and Harry.",
   "options": [
@@ -1443,7 +1443,7 @@
   "quiz": {
     "$oid": "640834dd45fc9c15f561509f"
   },
-  "answer": "C",
+  "answer": "Japan",
   "createdAt": "2023-03-08 14:16:09",
   "question": "In this country, individuals consume around a pound of rice on a daily basis and greet one another by asking, \"Have you eaten?\" What country am I in?",
   "options": [
@@ -1460,7 +1460,7 @@
   "quiz": {
     "$oid": "640834dd45fc9c15f561509f"
   },
-  "answer": "C",
+  "answer": "Italy",
   "createdAt": "2023-03-08 14:16:09",
   "question": "What country am I in? You can find it on the map with a boot-like shape, and its capital has the nickname ‘The Eternal City’ and also wasn’t built in a day.",
   "options": [
@@ -1477,7 +1477,7 @@
   "quiz": {
     "$oid": "640834dd45fc9c15f561509f"
   },
-  "answer": "C",
+  "answer": "Puru",
   "createdAt": "2023-03-08 14:16:09",
   "question": "Quito is its capital. Its official language is Spanish, and it is slightly smaller than Nevada in size. What country am I in?",
   "options": [
@@ -1494,7 +1494,7 @@
   "quiz": {
     "$oid": "640834dd45fc9c15f561509f"
   },
-  "answer": "C",
+  "answer": "Sweden",
   "createdAt": "2023-03-08 14:16:09",
   "question": "I am a small nation in Europe and the first Legoland. Also residing here is a small mermaid. What nation am I?",
   "options": [
@@ -1511,7 +1511,7 @@
   "quiz": {
     "$oid": "640834dd45fc9c15f561509f"
   },
-  "answer": "C",
+  "answer": "Austria",
   "createdAt": "2023-03-08 14:16:09",
   "question": "\"G'day mate!\" is a popular way to greet one another in this country. What country am I in?",
   "options": [
@@ -1528,7 +1528,7 @@
   "quiz": {
     "$oid": "640834dd45fc9c15f561509f"
   },
-  "answer": "C",
+  "answer": "Ecuador",
   "createdAt": "2023-03-08 14:16:09",
   "question": "I'm in a mountainous nation where Machu Picchu is often visited. Which country am I in?",
   "options": [
@@ -1545,7 +1545,7 @@
   "quiz": {
     "$oid": "640834dd45fc9c15f561509f"
   },
-  "answer": "C",
+  "answer": "Nepal",
   "createdAt": "2023-03-08 14:16:09",
   "question": "What nation am I in? This nation is well-known for its historic buildings, including temples, pyramids, and the Sphinx.",
   "options": [
@@ -1562,7 +1562,7 @@
   "quiz": {
     "$oid": "640834dd45fc9c15f561509f"
   },
-  "answer": "C",
+  "answer": "Poland",
   "createdAt": "2023-03-08 14:16:09",
   "question": "In which European country was shilling the unit of currency until 2002?",
   "options": [
@@ -1579,7 +1579,7 @@
   "quiz": {
     "$oid": "640834dd45fc9c15f561509f"
   },
-  "answer": "C",
+  "answer": "Portugal",
   "createdAt": "2023-03-08 14:16:09",
   "question": "What is the largest country (by area) that is wholly in Europe?",
   "options": [
@@ -1596,7 +1596,7 @@
   "quiz": {
     "$oid": "640836ab45fc9c15f56150d4"
   },
-  "answer": "C",
+  "answer": "Guidance tools",
   "createdAt": "2023-03-08 14:18:30",
   "question": "Which of the following should be based upon understanding the needs and problems of the students, competence, and interest of the guidance personnel?",
   "options": [
@@ -1613,7 +1613,7 @@
   "quiz": {
     "$oid": "640836ab45fc9c15f56150d4"
   },
-  "answer": "C",
+  "answer": "Evaluation",
   "createdAt": "2023-03-08 14:18:30",
   "question": "Which guidance service suggests the importance of maintaining continuous effort of knowing the whereabouts of the graduates and dropouts?",
   "options": [
@@ -1630,7 +1630,7 @@
   "quiz": {
     "$oid": "640836ab45fc9c15f56150d4"
   },
-  "answer": "C",
+  "answer": "Whenever the need arises",
   "createdAt": "2023-03-08 14:18:30",
   "question": "When should a teacher and a pupil hold a case conference?",
   "options": [
@@ -1647,7 +1647,7 @@
   "quiz": {
     "$oid": "640836ab45fc9c15f56150d4"
   },
-  "answer": "C",
+  "answer": "Inventory service",
   "createdAt": "2023-03-08 14:18:30",
   "question": "Dr. Luke attends to emotionally disturbed students. Which service is being provided by Dr. Luke?",
   "options": [
@@ -1664,7 +1664,7 @@
   "quiz": {
     "$oid": "640836ab45fc9c15f56150d4"
   },
-  "answer": "C",
+  "answer": "Tell her to choose a course that is closer to her heart.",
   "createdAt": "2023-03-08 14:18:30",
   "question": "Kristina is already in her senior year of high school. After attending their symposium or career choices, Christina is still confused with her career plan, whether to take Teaching or Physical Therapy. How would you assist her?",
   "options": [
@@ -1681,7 +1681,7 @@
   "quiz": {
     "$oid": "640836ab45fc9c15f56150d4"
   },
-  "answer": "C",
+  "answer": "How to Study Effectively",
   "createdAt": "2023-03-08 14:18:30",
   "question": "A living guidance program for social information service. Symposium on Personality Development while for the educational information is _____________________.",
   "options": [
@@ -1698,7 +1698,7 @@
   "quiz": {
     "$oid": "640836ab45fc9c15f56150d4"
   },
-  "answer": "C",
+  "answer": "Research and Evaluation",
   "createdAt": "2023-03-08 14:18:30",
   "question": "Which concerns the regular check-up of the effectiveness of the guidance program?",
   "options": [
@@ -1715,7 +1715,7 @@
   "quiz": {
     "$oid": "640836ab45fc9c15f56150d4"
   },
-  "answer": "C",
+  "answer": "Counseling",
   "createdAt": "2023-03-08 14:18:30",
   "question": "Which aims to make available knowledge or inputs not ordinarily provided through the instructional program or during the regular period of time?",
   "options": [
@@ -1732,7 +1732,7 @@
   "quiz": {
     "$oid": "640836ab45fc9c15f56150d4"
   },
-  "answer": "C",
+  "answer": "Interest inventories",
   "createdAt": "2023-03-08 14:18:30",
   "question": "Which test should be administered if the teachers/counselor’s purpose is to identify the individual's hidden/inner feelings prejudice, desires and thoughts?",
   "options": [
@@ -1749,7 +1749,7 @@
   "quiz": {
     "$oid": "640836ab45fc9c15f56150d4"
   },
-  "answer": "C",
+  "answer": "Keep in constant touch with former students.",
   "createdAt": "2023-03-08 14:18:30",
   "question": "If counseling service is to gain an understanding of oneself: Follow-up is to __________.",
   "options": [
@@ -1766,7 +1766,7 @@
   "quiz": {
     "$oid": "640836ab45fc9c15f56150d4"
   },
-  "answer": "C",
+  "answer": "Aggressive type",
   "createdAt": "2023-03-08 14:18:30",
   "question": "In a class, there are children who usually get out of the social circle. How do you describe these children?",
   "options": [
@@ -1783,7 +1783,7 @@
   "quiz": {
     "$oid": "640836ab45fc9c15f56150d4"
   },
-  "answer": "C",
+  "answer": "Check the facilities of the guidance office.",
   "createdAt": "2023-03-08 14:18:30",
   "question": "For the counseling service to be effective, the school administrator should________.\n ",
   "options": [
@@ -1800,7 +1800,7 @@
   "quiz": {
     "$oid": "640836ab45fc9c15f56150d4"
   },
-  "answer": "C",
+  "answer": "Slow learner",
   "createdAt": "2023-03-08 14:18:30",
   "question": "Dianne has the above-average mental ability, but she is poorly motivated in class. That is why she has low grades in her academic performance. Is she?",
   "options": [
@@ -1817,7 +1817,7 @@
   "quiz": {
     "$oid": "640836ab45fc9c15f56150d4"
   },
-  "answer": "C",
+  "answer": "Gifted",
   "createdAt": "2023-03-08 14:18:30",
   "question": null,
   "options": [
@@ -1834,7 +1834,7 @@
   "quiz": {
     "$oid": "640836ab45fc9c15f56150d4"
   },
-  "answer": "C",
+  "answer": "Force her to talk.",
   "createdAt": "2023-03-08 14:18:30",
   "question": "Ms. Burgos found that one of her pupils has a language disorder. What must she do?",
   "options": [
@@ -1851,7 +1851,7 @@
   "quiz": {
     "$oid": "640836ab45fc9c15f56150d4"
   },
-  "answer": "C",
+  "answer": "Express their view to the counselee.",
   "createdAt": "2023-03-08 14:18:30",
   "question": "The responsibility of the counselor is to _____________.",
   "options": [
@@ -1868,7 +1868,7 @@
   "quiz": {
     "$oid": "640836ab45fc9c15f56150d4"
   },
-  "answer": "C",
+  "answer": "Career information",
   "createdAt": "2023-03-08 14:18:30",
   "question": "What kind of guidance service do the counselors perform when they schedule job fairing at the school?",
   "options": [
@@ -1885,7 +1885,7 @@
   "quiz": {
     "$oid": "640836ab45fc9c15f56150d4"
   },
-  "answer": "C",
+  "answer": "Counseling is inherent in a school.",
   "createdAt": "2023-03-08 14:18:30",
   "question": "Which statement about counseling is QUESTIONABLE?",
   "options": [
@@ -1902,7 +1902,7 @@
   "quiz": {
     "$oid": "640836ab45fc9c15f56150d4"
   },
-  "answer": "C",
+  "answer": "Conducting personality test.",
   "createdAt": "2023-03-08 14:18:30",
   "question": "Which measure will help a counselor know an individual before the counseling process?",
   "options": [
@@ -1919,7 +1919,7 @@
   "quiz": {
     "$oid": "640836ab45fc9c15f56150d4"
   },
-  "answer": "C",
+  "answer": "Self-knowledge",
   "createdAt": "2023-03-08 14:18:30",
   "question": "What is the ultimate aim of counseling for the individuals to attain?",
   "options": [
@@ -1936,7 +1936,7 @@
   "quiz": {
     "$oid": "640836ab45fc9c15f56150d5"
   },
-  "answer": "C",
+  "answer": "52",
   "createdAt": "2023-03-08 14:19:40",
   "question": "158=___ + 106.\nWhat number will come in the blank to make the number sentence correct?",
   "options": [
@@ -1953,7 +1953,7 @@
   "quiz": {
     "$oid": "640836ab45fc9c15f56150d5"
   },
-  "answer": "C",
+  "answer": "3/5",
   "createdAt": "2023-03-08 14:19:40",
   "question": null,
   "options": [
@@ -1970,7 +1970,7 @@
   "quiz": {
     "$oid": "640836ab45fc9c15f56150d5"
   },
-  "answer": "C",
+  "answer": "12",
   "createdAt": "2023-03-08 14:19:40",
   "question": "Gaurav has 918 marbles. He wants to make packets of marbles, with nine marbles in each pack. How many packs will he be able to make?\n",
   "options": [
@@ -1987,7 +1987,7 @@
   "quiz": {
     "$oid": "640836ab45fc9c15f56150d5"
   },
-  "answer": "C",
+  "answer": "6.2",
   "createdAt": "2023-03-08 14:19:40",
   "question": "Which of these lies between 6.3 and 6.6? \n ",
   "options": [
@@ -2004,7 +2004,7 @@
   "quiz": {
     "$oid": "640836ab45fc9c15f56150d5"
   },
-  "answer": "C",
+  "answer": "15",
   "createdAt": "2023-03-08 14:19:40",
   "question": "A teacher brought some toffees to her class. After giving three toffees each to 15 students who had completed their assignments, she has 60 toffees left with her. How many toffees did she bring to the class?",
   "options": [
@@ -2021,7 +2021,7 @@
   "quiz": {
     "$oid": "640836ab45fc9c15f56150d5"
   },
-  "answer": "C",
+  "answer": "37+1",
   "createdAt": "2023-03-08 14:19:40",
   "question": "Which of these numbers have only two factors, one and the number itself?",
   "options": [
@@ -2038,7 +2038,7 @@
   "quiz": {
     "$oid": "640836ab45fc9c15f56150d5"
   },
-  "answer": "C",
+  "answer": "1",
   "createdAt": "2023-03-08 14:19:40",
   "question": "Meena divides a number by 2. She then divides the answer by 2. This is the same as dividing the original number by:  \n",
   "options": [
@@ -2055,7 +2055,7 @@
   "quiz": {
     "$oid": "640836ab45fc9c15f56150d5"
   },
-  "answer": "C",
+  "answer": "12",
   "createdAt": "2023-03-08 14:19:40",
   "question": "John has stamps from different countries. 1/3rd of them are India's stamps. If he has 36 Indian stamps, how many stamps does he have in total?\n",
   "options": [
@@ -2072,7 +2072,7 @@
   "quiz": {
     "$oid": "640836ab45fc9c15f56150d5"
   },
-  "answer": "C",
+  "answer": "1024",
   "createdAt": "2023-03-08 14:19:40",
   "question": "1024+1025+___=1025+1025+1025\nWhat number will come in the blank to make the number sentence correct?",
   "options": [
@@ -2089,7 +2089,7 @@
   "quiz": {
     "$oid": "640836ab45fc9c15f56150d5"
   },
-  "answer": "C",
+  "answer": "Rs.55",
   "createdAt": "2023-03-08 14:19:40",
   "question": "Meena has bought six pens. The cost of each pen was between Rs.25 and Rs. 30. Which of these could be the total cost of the pens?\n",
   "options": [
@@ -2106,7 +2106,7 @@
   "quiz": {
     "$oid": "640836ab45fc9c15f56150d5"
   },
-  "answer": "C",
+  "answer": "100 degrees",
   "createdAt": "2023-03-08 14:19:40",
   "question": "Two angles of a triangle measure 35 degrees and 65 degrees. What is the measure of the third angle of the triangle?",
   "options": [
@@ -2123,7 +2123,7 @@
   "quiz": {
     "$oid": "640836ab45fc9c15f56150d5"
   },
-  "answer": "C",
+  "answer": "90 degrees",
   "createdAt": "2023-03-08 14:19:40",
   "question": "The sum of any three angles of a rectangle is:",
   "options": [
@@ -2140,7 +2140,7 @@
   "quiz": {
     "$oid": "640836ab45fc9c15f56150d5"
   },
-  "answer": "C",
+  "answer": "1:4",
   "createdAt": "2023-03-08 14:19:40",
   "question": "The ratio of 500ml to 2 liters is:",
   "options": [
@@ -2157,7 +2157,7 @@
   "quiz": {
     "$oid": "640836ab45fc9c15f56150d5"
   },
-  "answer": "C",
+  "answer": "20 + 0 = 20",
   "createdAt": "2023-03-08 14:19:40",
   "question": "Which of the following is true?",
   "options": [
@@ -2174,7 +2174,7 @@
   "quiz": {
     "$oid": "640836ab45fc9c15f56150d5"
   },
-  "answer": "C",
+  "answer": "3",
   "createdAt": "2023-03-08 14:19:40",
   "question": "The place value of 3 in 1.234:",
   "options": [
@@ -2191,7 +2191,7 @@
   "quiz": {
     "$oid": "640836ab45fc9c15f56150d6"
   },
-  "answer": "C",
+  "answer": "Supernova",
   "createdAt": "2023-03-08 14:20:37",
   "question": "Which type of star is the sun?\n",
   "options": [
@@ -2208,7 +2208,7 @@
   "quiz": {
     "$oid": "640836ab45fc9c15f56150d6"
   },
-  "answer": "C",
+  "answer": "Isaac Newton",
   "createdAt": "2023-03-08 14:20:37",
   "question": "Who invented the telescope?\n",
   "options": [
@@ -2225,7 +2225,7 @@
   "quiz": {
     "$oid": "640836ab45fc9c15f56150d6"
   },
-  "answer": "C",
+  "answer": "Indian ocean",
   "createdAt": "2023-03-08 14:20:37",
   "question": "In which ocean is 'Mariana Trench' located?\n",
   "options": [
@@ -2242,7 +2242,7 @@
   "quiz": {
     "$oid": "640836ab45fc9c15f56150d6"
   },
-  "answer": "C",
+  "answer": "True",
   "createdAt": "2023-03-08 14:20:37",
   "question": "The sun is the biggest star in the universe.\n",
   "options": [
@@ -2257,7 +2257,6 @@
   "quiz": {
     "$oid": "640836ab45fc9c15f56150d6"
   },
-  "answer": "C",
   "createdAt": "2023-03-08 14:20:37",
   "question": "A stethoscope is used by\n",
   "options": []
@@ -2269,7 +2268,7 @@
   "quiz": {
     "$oid": "640836ab45fc9c15f56150d6"
   },
-  "answer": "C",
+  "answer": "The Moon",
   "createdAt": "2023-03-08 14:20:37",
   "question": "What powers the Earth's water cycle?\n",
   "options": [
@@ -2286,7 +2285,7 @@
   "quiz": {
     "$oid": "640836ab45fc9c15f56150d6"
   },
-  "answer": "C",
+  "answer": "Uranus",
   "createdAt": "2023-03-08 14:20:37",
   "question": "Choose the planets which are considered gaseous:\n",
   "options": [
@@ -2304,7 +2303,7 @@
   "quiz": {
     "$oid": "640836ab45fc9c15f56150d6"
   },
-  "answer": "C",
+  "answer": "Speed of sound",
   "createdAt": "2023-03-08 14:20:37",
   "question": "Which is faster in the air?\n ",
   "options": [
@@ -2321,7 +2320,7 @@
   "quiz": {
     "$oid": "640836ab45fc9c15f56150d6"
   },
-  "answer": "C",
+  "answer": "Water",
   "createdAt": "2023-03-08 14:20:37",
   "question": "Fire can not burn without\n",
   "options": [
@@ -2338,7 +2337,7 @@
   "quiz": {
     "$oid": "640836ab45fc9c15f56150d6"
   },
-  "answer": "C",
+  "answer": "20 minutes",
   "createdAt": "2023-03-08 14:20:37",
   "question": "Approx how much time does light take to travel from Sun to Earth?\n",
   "options": [
@@ -2355,7 +2354,7 @@
   "quiz": {
     "$oid": "640837a445fc9c15f561510e"
   },
-  "answer": "C",
+  "answer": "I will always love my life no matter what.",
   "createdAt": "2023-03-08 14:22:36",
   "question": "\n",
   "options": [
@@ -2375,7 +2374,7 @@
   "quiz": {
     "$oid": "640837a445fc9c15f561510e"
   },
-  "answer": "C",
+  "answer": "Shoes",
   "createdAt": "2023-03-08 14:22:36",
   "question": null,
   "options": [
@@ -2395,7 +2394,7 @@
   "quiz": {
     "$oid": "640837a445fc9c15f561510e"
   },
-  "answer": "C",
+  "answer": "Crazy",
   "createdAt": "2023-03-08 14:22:36",
   "question": "\n",
   "options": [
@@ -2415,7 +2414,7 @@
   "quiz": {
     "$oid": "640837a445fc9c15f561510e"
   },
-  "answer": "C",
+  "answer": "Sticking my tongue out",
   "createdAt": "2023-03-08 14:22:36",
   "question": "Which is one habit that you catch yourself doing a lot?\n",
   "options": [
@@ -2435,7 +2434,7 @@
   "quiz": {
     "$oid": "640837a445fc9c15f561510e"
   },
-  "answer": "C",
+  "answer": "Surfing the internet",
   "createdAt": "2023-03-08 14:22:36",
   "question": "\n",
   "options": [
@@ -2455,7 +2454,7 @@
   "quiz": {
     "$oid": "640837a445fc9c15f561510e"
   },
-  "answer": "C",
+  "answer": "Jungkook",
   "createdAt": "2023-03-08 14:22:36",
   "question": null,
   "options": [
@@ -2475,7 +2474,7 @@
   "quiz": {
     "$oid": "640837a445fc9c15f561510e"
   },
-  "answer": "C",
+  "answer": "Cat",
   "createdAt": "2023-03-08 14:22:36",
   "question": null,
   "options": [
@@ -2495,7 +2494,7 @@
   "quiz": {
     "$oid": "640837a445fc9c15f561510e"
   },
-  "answer": "C",
+  "answer": "I stay out of it.",
   "createdAt": "2023-03-08 14:22:36",
   "question": "\n",
   "options": [
@@ -2515,7 +2514,7 @@
   "quiz": {
     "$oid": "640837a445fc9c15f561510e"
   },
-  "answer": "C",
+  "answer": "Black",
   "createdAt": "2023-03-08 14:22:36",
   "question": "What's your favorite color?\n",
   "options": [
@@ -2535,7 +2534,7 @@
   "quiz": {
     "$oid": "640837a445fc9c15f561510e"
   },
-  "answer": "C",
+  "answer": "August",
   "createdAt": "2023-03-08 14:22:36",
   "question": "\n",
   "options": [
@@ -2555,7 +2554,7 @@
   "quiz": {
     "$oid": "640837a445fc9c15f561510f"
   },
-  "answer": "C",
+  "answer": "Whenever I want to escape the pressures of my daily life",
   "createdAt": "2023-03-08 14:23:50",
   "question": "When do you usually listen to music?",
   "options": [
@@ -2575,7 +2574,7 @@
   "quiz": {
     "$oid": "640837a445fc9c15f561510f"
   },
-  "answer": "C",
+  "answer": "Something that you see in an orchestra.",
   "createdAt": "2023-03-08 14:23:50",
   "question": "If you could purchase one instrument, what would it be?",
   "options": [
@@ -2595,7 +2594,7 @@
   "quiz": {
     "$oid": "640837a445fc9c15f561510f"
   },
-  "answer": "C",
+  "answer": "Cried...",
   "createdAt": "2023-03-08 14:23:50",
   "question": "When you first heard your favorite song, you:",
   "options": [
@@ -2615,7 +2614,7 @@
   "quiz": {
     "$oid": "640837a445fc9c15f561510f"
   },
-  "answer": "C",
+  "answer": "Something mundane in a poetic way or something beautiful like the wonders of space",
   "createdAt": "2023-03-08 14:23:50",
   "question": "Your favorite lyrics describe:",
   "options": [
@@ -2635,7 +2634,7 @@
   "quiz": {
     "$oid": "640837a445fc9c15f561510f"
   },
-  "answer": "C",
+  "answer": "Going crazy with the crowd and screaming so loudly that we can't hear the performer",
   "createdAt": "2023-03-08 14:23:50",
   "question": "What would be the ultimate concert experience?",
   "options": [
@@ -2655,7 +2654,7 @@
   "quiz": {
     "$oid": "640837a445fc9c15f561510f"
   },
-  "answer": "C",
+  "answer": "Something over four minutes",
   "createdAt": "2023-03-08 14:23:50",
   "question": "How long do you like your songs to be?",
   "options": [
@@ -2675,7 +2674,7 @@
   "quiz": {
     "$oid": "640837a445fc9c15f561510f"
   },
-  "answer": "C",
+  "answer": "Yesterday",
   "createdAt": "2023-03-08 14:23:50",
   "question": "Which Beatles song do you think sounds the best?",
   "options": [
@@ -2695,7 +2694,7 @@
   "quiz": {
     "$oid": "640837a445fc9c15f561510f"
   },
-  "answer": "C",
+  "answer": "Not important, but only because I focus more on the high energy of the song.",
   "createdAt": "2023-03-08 14:23:50",
   "question": "How important are the lyrics to you?",
   "options": [
@@ -2715,7 +2714,7 @@
   "quiz": {
     "$oid": "640837a445fc9c15f561510f"
   },
-  "answer": "C",
+  "answer": "Anyone I can fit into my living room",
   "createdAt": "2023-03-08 14:23:50",
   "question": "Who do you enjoy the music with?",
   "options": [
@@ -2735,7 +2734,7 @@
   "quiz": {
     "$oid": "640837a445fc9c15f561510f"
   },
-  "answer": "C",
+  "answer": "I'd rather enjoy what others have created.",
   "createdAt": "2023-03-08 14:23:50",
   "question": "How creative do you consider yourself to be?",
   "options": [
@@ -2755,7 +2754,7 @@
   "quiz": {
     "$oid": "640837a445fc9c15f5615110"
   },
-  "answer": "C",
+  "answer": "Light",
   "createdAt": "2023-03-08 14:24:36",
   "question": "How do you like your music?",
   "options": [
@@ -2772,7 +2771,7 @@
   "quiz": {
     "$oid": "640837a445fc9c15f5615110"
   },
-  "answer": "C",
+  "answer": "Yes! All the time",
   "createdAt": "2023-03-08 14:24:36",
   "question": "Can you listen to your favorite songs on the radio?",
   "options": [
@@ -2789,7 +2788,7 @@
   "quiz": {
     "$oid": "640837a445fc9c15f5615110"
   },
-  "answer": "C",
+  "answer": "Mainly realistic, which is usually sad.",
   "createdAt": "2023-03-08 14:24:36",
   "question": "Is the music you usually listen to, is sad?",
   "options": [
@@ -2806,7 +2805,7 @@
   "quiz": {
     "$oid": "640837a445fc9c15f5615110"
   },
-  "answer": "C",
+  "answer": "So loud that I can't hear myself scream",
   "createdAt": "2023-03-08 14:24:36",
   "question": "Is your music usually loud or soft?",
   "options": [
@@ -2823,7 +2822,7 @@
   "quiz": {
     "$oid": "640837a445fc9c15f5615110"
   },
-  "answer": "C",
+  "answer": "Their voice is very smooth, the words kind of run over each other, and the singing is somewhat soft.",
   "createdAt": "2023-03-08 14:24:36",
   "question": "When you listen to the singer of some of your favorite songs, what does she/he sound like?",
   "options": [
@@ -2840,7 +2839,7 @@
   "quiz": {
     "$oid": "640837a445fc9c15f5615110"
   },
-  "answer": "C",
+  "answer": "Smooth",
   "createdAt": "2023-03-08 14:24:36",
   "question": "Do you prefer the lyrics of your music to be smooth or clear?",
   "options": [
@@ -2857,7 +2856,7 @@
   "quiz": {
     "$oid": "640837a445fc9c15f5615110"
   },
-  "answer": "C",
+  "answer": "I should move to Kansas or Kentucky.",
   "createdAt": "2023-03-08 14:24:36",
   "question": "When people see your iPod or listen to your favorite song, they say that:",
   "options": [
@@ -2874,7 +2873,7 @@
   "quiz": {
     "$oid": "640837a445fc9c15f5615110"
   },
-  "answer": "C",
+  "answer": "Cow",
   "createdAt": "2023-03-08 14:24:36",
   "question": "Choose your favorite animal: ",
   "options": [
@@ -2891,7 +2890,7 @@
   "quiz": {
     "$oid": "640837a445fc9c15f5615110"
   },
-  "answer": "C",
+  "answer": "Your Favorite Martian, Weird Al Y., or Rucka Rucka Ali.",
   "createdAt": "2023-03-08 14:24:36",
   "question": "Who do you like the most?",
   "options": [
@@ -2908,7 +2907,7 @@
   "quiz": {
     "$oid": "640837a445fc9c15f5615110"
   },
-  "answer": "C",
+  "answer": "Club Villain (Your Favorite Martian)",
   "createdAt": "2023-03-08 14:24:36",
   "question": "Pick your favorite song of these:",
   "options": [

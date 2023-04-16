@@ -29,6 +29,11 @@ exports.QuestionService = {
     return newQuestionList;
   },
 
+  createQuizQuestion: async function (data) {
+    const newQuestionList = await Question.insertMany(data);
+    return newQuestionList;
+  },
+
   getQuestionById: async function (id) {
     const question = await Question.findById(id);
 

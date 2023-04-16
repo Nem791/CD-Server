@@ -10,15 +10,18 @@ const setRouter = express.Router({ mergeParams: true });
 
 setRouter.route("/").post(setController.createSet);
 
+setRouter.route("/approve/:setId").patch(setController.approveSet);
+
+setRouter.route("/get-all-sets/:userId").get(setController.getSets);
+setRouter.route("/get-all-approved-sets").get(setController.getAllSets);
+
+setRouter.route("/profile/info/:userId").get(useController.getProfileData);
+
 setRouter
   .route("/:setId")
   .get(setController.getSetById)
   .patch(upload.single("filename"), setController.updateSet)
   .delete(setController.deleteSet);
-
-setRouter.route("/get-all-sets/:userId").get(setController.getSets);
-
-setRouter.route("/profile/info/:userId").get(useController.getProfileData);
 
 setRouter.use(
   "/:setId",

@@ -16,6 +16,16 @@ exports.createQuiz = catchAsync(async (req, res) => {
   });
 });
 
+exports.createQuizBySetId = catchAsync(async (req, res) => {
+  const newTests = await QuizService.createQuizBySetId(req.params.setId);
+  res.status(201).json({
+    status: "success",
+    data: {
+      tests: newTests,
+    },
+  });
+});
+
 exports.recommendQuizzes = catchAsync(async (req, res) => {
   const quizzes = await QuizService.recommendQuizzes(req.params.id);
   res.status(201).json({

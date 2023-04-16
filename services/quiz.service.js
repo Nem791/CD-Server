@@ -3,11 +3,68 @@ const Question = require("../models/questionModel");
 const QuizModel = require("../models/quizModel");
 const Test = require("../models/testModel");
 const { getBagOfWords, cosineSimilarity } = require("../utils/recommend");
+const { CardService } = require("./card.service");
+const { QuestionService } = require("./question.service");
+const { SetService } = require("./set.service");
 
 exports.QuizService = {
   createQuiz: async function (data) {
     const quiz = await QuizModel.create(data);
     return quiz;
+  },
+
+  createQuizBySetId: async function (setId) {
+    try {
+      setId = new Types.ObjectId(setId);
+
+      const quizExist = await QuizModel.findOne({ setId });
+      console.log("quizExist: ", quizExist);
+      if (quizExist) {
+        return quizExist;
+      }
+      const cards = await CardService.getAllCards({ setId });
+      const optionList = cards.map((card) => {
+        return card.meaningUsers;
+      });
+      optionList.sort(() => 0.5 - Math.random());
+
+      const quizId = new Types.ObjectId();
+      const questions = cards.map((card) => {
+        const optionsSet = new Set([card.meaningUsers]);
+        for (let index = 0; index < optionList.length; index++) {
+          const element = optionList[index];
+          optionsSet.add(element);
+        }
+        while (optionsSet.size > 4) {
+          optionsSet.delete(mySet.values().next().value); // Remove the first value in the set
+        }
+        const options = Array.from(optionsSet);
+
+        return {
+          quiz: quizId,
+          answer: card.meaningUsers,
+          question: `What is the meaning of ${card.word}?`,
+          options,
+          type: "multiple-choice",
+        };
+      });
+
+      const quizQuestions = await QuestionService.createQuizQuestion(questions);
+
+      const set = await SetService.getSetById(String(setId));
+      const quiz = await this.createQuiz({
+        _id: quizId,
+        title: set.name,
+        tags: ["Study Set"],
+        description: set.description,
+        user: set.createdBy,
+        img: set.image,
+        setId: set._id,
+      });
+      return quiz;
+    } catch (error) {
+      console.log(error);
+    }
   },
 
   getAllQuizzes: async function (id) {

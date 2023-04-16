@@ -39,6 +39,12 @@ exports.UserService = {
       });
     return data;
   },
+
+  getAllUsers: async function () {
+    const users = await User.find({});
+    return users;
+  },
+
   updateLearningStreak: async (userId) => {
     const io = severStore.getSocketServerInstance();
     const userSocketId = severStore.getActiveConnections(String(userId));

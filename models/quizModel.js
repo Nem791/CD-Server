@@ -36,6 +36,10 @@ const quizSchema = new mongoose.Schema({
     type: Boolean,
     default: false,
   },
+  setId: {
+    type: mongoose.Types.ObjectId,
+    ref: "Set",
+  },
 });
 
 // testSchema.pre(/^find/, function (next) {
