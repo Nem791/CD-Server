@@ -12,8 +12,9 @@ setRouter.route("/").post(setController.createSet);
 
 setRouter.route("/approve/:setId").patch(setController.approveSet);
 
+setRouter.route("/get-all-sets").get(setController.getAllSets);
+setRouter.route("/get-all-approved-sets").get(setController.getAllApprovedSets);
 setRouter.route("/get-all-sets/:userId").get(setController.getSets);
-setRouter.route("/get-all-approved-sets").get(setController.getAllSets);
 
 setRouter.route("/profile/info/:userId").get(useController.getProfileData);
 

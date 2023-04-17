@@ -60,6 +60,21 @@ exports.getAllSets = catchAsync(async (req, res, next) => {
   });
 });
 
+exports.getAllApprovedSets = catchAsync(async (req, res, next) => {
+  const sets = await SetService.getAllApprovedSets();
+
+  if (!sets) {
+    return next(new AppError("No document found with that ID", 404));
+  }
+
+  res.status(200).json({
+    status: "success",
+    data: {
+      sets,
+    },
+  });
+});
+
 exports.updateSet = catchAsync(async (req, res, next) => {
   const set = await SetService.updateSet(req, res);
 

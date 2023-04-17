@@ -40,6 +40,24 @@ exports.UserService = {
     return data;
   },
 
+  promoteUser: async function (id) {
+    const users = await User.findByIdAndUpdate(
+      id,
+      { role: "admin" },
+      { new: true }
+    );
+    return users;
+  },
+
+  upgradeUser: async function (id) {
+    const users = await User.findByIdAndUpdate(
+      id,
+      { paidAmount: 1000 },
+      { new: true }
+    );
+    return users;
+  },
+
   getAllUsers: async function () {
     const users = await User.find({});
     return users;

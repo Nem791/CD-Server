@@ -10,8 +10,8 @@ quizRouter
 
 quizRouter.route("/create-quiz/:setId").post(quizController.createQuizBySetId);
 
-quizRouter.route("/:id").get(quizController.getQuizById);
-
 quizRouter.route("/recommend/:id").get(quizController.recommendQuizzes);
+
+quizRouter.route("/:id").get(quizController.getQuizById);
 
 module.exports = { quizRouter };

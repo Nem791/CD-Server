@@ -42,9 +42,18 @@ exports.SetService = {
     }
   },
 
-  getAllSets: async function () {
+  getAllApprovedSets: async function () {
     try {
       const sets = await Set.find({ approved: true });
+      return sets;
+    } catch (error) {
+      console.log(error);
+    }
+  },
+
+  getAllSets: async function () {
+    try {
+      const sets = await Set.find({});
       return sets;
     } catch (error) {
       console.log(error);

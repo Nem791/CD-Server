@@ -12,10 +12,12 @@ const { setRouter } = require("./set.routes");
 const { testRouter } = require("./test.routes");
 const { transactionRouter } = require("./transaction.routes");
 const { userRouter } = require("./user.routes");
+const { adminRouter } = require("./admin.routes");
 const { webhookRouter } = require("./webhook.routes");
 
 const indexRoutes = express.Router();
 
+indexRoutes.use("/admin", adminRouter);
 indexRoutes.use("/cards", cardRouter);
 indexRoutes.use("/users", userRouter);
 indexRoutes.use("/reviews", reviewRouter);

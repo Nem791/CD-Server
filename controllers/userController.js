@@ -57,6 +57,24 @@ exports.deleteMe = catchAsync(async (req, res, next) => {
   });
 });
 
+exports.promoteUser = catchAsync(async (req, res, next) => {
+  const data = await UserService.promoteUser(req.params.userId);
+
+  res.json({
+    status: "success",
+    data,
+  });
+});
+
+exports.upgradeUser = catchAsync(async (req, res, next) => {
+  const data = await UserService.upgradeUser(req.params.userId);
+
+  res.json({
+    status: "success",
+    data,
+  });
+});
+
 exports.getProfileData = catchAsync(async (req, res, next) => {
   const data = await UserService.getProfileInfo(req.params.userId);
 
