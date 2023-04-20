@@ -118,10 +118,14 @@ exports.ReviewService = {
   },
 
   getTodayReviewTests: async function () {
-    const reviewReviewTest = await ReviewTestModel.find({
-      // name: new Date().toLocaleDateString("pt-PT"),
-      done: false,
-    });
+    const reviewReviewTest = await ReviewTestModel.aggregate()
+      .match({ done: false })
+      .lookup({
+        from: "quizzes",
+        localField: "set",
+        foreignField: "_id",
+        as: "quiz",
+      });
     return reviewReviewTest;
   },
 
