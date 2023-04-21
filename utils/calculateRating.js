@@ -6,7 +6,6 @@ async function calculateRating(question) {
   if (originalQuestion.answer !== question.answer) {
     rating = rating - 3;
   }
-  console.log("question.time: ", question.time);
   if (question.time > 2) {
     rating--;
   }
