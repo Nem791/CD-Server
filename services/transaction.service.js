@@ -13,17 +13,17 @@ exports.TransactionService = {
     const name = data.name;
     const user = data.user;
 
-    const question = await Question.find({ answer: "C" });
-    console.log(question.length);
-    await Question.updateMany({ answer: "C" }, [
-      {
-        $set: {
-          answer: {
-            $first: "$options",
-          },
-        },
-      },
-    ]);
+    // const question = await Question.find({ answer: "C" });
+    // console.log(question.length);
+    // await Question.updateMany({ answer: "C" }, [
+    //   {
+    //     $set: {
+    //       answer: {
+    //         $first: "$options",
+    //       },
+    //     },
+    //   },
+    // ]);
 
     const session = await stripe.checkout.sessions.create({
       // line_items: [
