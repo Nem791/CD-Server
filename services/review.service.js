@@ -78,8 +78,6 @@ exports.ReviewService = {
         score++;
       }
 
-      const title = await Question.findById(question.question);
-
       const processedQuestion = calculateSM_2(question);
       const reviewDate =
         processedQuestion.reviewDate.toLocaleDateString("pt-PT");
