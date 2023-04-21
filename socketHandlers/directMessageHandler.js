@@ -48,7 +48,7 @@ const directMessageHandler = async (socket, data) => {
     );
 
     chatUpdates.updateChatHistory(participants);
-    if (conversation.score[userId] >= 40) {
+    if (conversation.score[userId] >= 10) {
       for (let participant of participants) {
         const activeConnections = severStore.getActiveConnections(
           String(participant)

@@ -27,6 +27,13 @@ exports.ReviewService = {
         foreignField: "_id",
         as: "questionInfo",
       });
+
+    reviewSet[0].questions = reviewSet[0].questionInfo.map(({ _id }) =>
+      reviewSet[0].questions.find(
+        ({ question }) => String(question) === String(_id)
+      )
+    );
+
     return reviewSet;
   },
 
@@ -70,6 +77,8 @@ exports.ReviewService = {
       if (question.rating >= 3) {
         score++;
       }
+
+      const title = await Question.findById(question.question);
 
       const processedQuestion = calculateSM_2(question);
       const reviewDate =

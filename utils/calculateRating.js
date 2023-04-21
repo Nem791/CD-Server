@@ -6,10 +6,11 @@ async function calculateRating(question) {
   if (originalQuestion.answer !== question.answer) {
     rating = rating - 3;
   }
-  if (question.time > 7) {
+  console.log("question.time: ", question.time);
+  if (question.time > 2) {
     rating--;
   }
-  if (question.time > 14) {
+  if (question.time > 4) {
     rating--;
   }
 
