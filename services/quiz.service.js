@@ -26,7 +26,6 @@ exports.QuizService = {
       const optionList = cards.map((card) => {
         return card.meaningUsers;
       });
-      optionList.sort(() => 0.5 - Math.random());
 
       const quizId = new Types.ObjectId();
       const questions = cards.map((card) => {

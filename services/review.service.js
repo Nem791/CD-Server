@@ -27,6 +27,13 @@ exports.ReviewService = {
         foreignField: "_id",
         as: "questionInfo",
       });
+
+    reviewSet[0].questions = reviewSet[0].questionInfo.map(({ _id }) =>
+      reviewSet[0].questions.find(
+        ({ question }) => String(question) === String(_id)
+      )
+    );
+
     return reviewSet;
   },
 
