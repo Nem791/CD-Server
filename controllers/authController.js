@@ -31,7 +31,7 @@ const createSendToken = (user, statusCode, res) => {
 
   if (process.env.NODE_ENV === "production") cookieOptions.secure = true;
 
-  res.cookie("jwt", token, cookieOptions);
+  // res.cookie("jwt", token, cookieOptions);
 
   // Xóa mkhau khỏi DB
   user.password = undefined;
@@ -82,8 +82,8 @@ exports.login = catchAsync(async (req, res, next) => {
 exports.onAuthStateChanged = async (req, res) => {
   try {
     let token;
-    if (req.cookies.jwt) {
-      token = req.cookies.jwt;
+    if (req.params.token) {
+      token = req.params.token;
     }
 
     if (!token) {

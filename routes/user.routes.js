@@ -11,7 +11,7 @@ userRouter.post("/signUpWithGoogle", authController.signUpWithGoogle);
 // Route ktra xem ng dùng đã đăng nhập chưa
 // (dành cho Front end)
 
-userRouter.get("/isLogin", authController.onAuthStateChanged);
+userRouter.get("/isLogin/:token", authController.onAuthStateChanged);
 
 userRouter.post("/forgotPassword", authController.forgotPassword);
 userRouter.patch("/resetPassword/:token", authController.resetPassword);
