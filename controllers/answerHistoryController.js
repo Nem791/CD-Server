@@ -1,6 +1,4 @@
-const UserTestHistory = require("../models/userTestHistoryModel");
 const catchAsync = require("../utils/catchAsync");
-const AppError = require("../utils/appError");
 const { AnswerHistoryService } = require("../services/answerHistory.service");
 
 exports.createAnswerHistory = catchAsync(async (req, res) => {
