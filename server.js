@@ -1,9 +1,8 @@
 const mongoose = require("mongoose");
-
 const dotenv = require("dotenv");
 const http = require("http");
-// Xử lý uncaught exception
 
+// Handle uncaught exceptions
 process.on("uncaughtException", (err) => {
   console.log("UNCAUGHT EXCEPTION! Shutting down...");
   console.log(err.name, err.message);
@@ -15,29 +14,30 @@ dotenv.config();
 
 const app = require("./app");
 const { registerSocketServer } = require("./socketServer");
+
+// Create an HTTP server instance
 const server = http.createServer(app);
-// C. Kết nối vs Socket.io
+
+// Connect the socket.io server to the HTTP server
 registerSocketServer(server);
 
+// Connect to MongoDB
 const DB = process.env.MONGO.replace("<PASSWORD>", process.env.MONGO_PASSWORD);
-// const DB = "mongodb://localhost:27017/Quizlet";
-
-// B. Kết nối vào Mongo Compass
 mongoose.connect(DB).then(() => {
   console.log("DB connection successful!");
 });
 
-// D. START SERVER
+// Start the server
 const port = process.env.PORT || 3000;
-
 server.listen(port, () => {
   console.log(`App running on port ${port}...`);
 });
 
-// Xử lý các promise bị reject (từ chối)
+// Handle unhandled promise rejections
 process.on("unhandledRejection", (err) => {
-  console.log("UNHANDLER REJECTION! Shutting down...");
+  console.log("UNHANDLED REJECTION! Shutting down...");
   console.log(err);
+  // Close the server and exit the process
   server.close(() => {
     process.exit(1);
   });

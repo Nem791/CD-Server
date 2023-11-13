@@ -1,40 +1,39 @@
 const { v4: uuidv4 } = require("uuid");
 
+// Create a Map to store connected users and remember the initial insertion order of keys
 const connectedUsers = new Map();
+
+// Array to store active rooms
 let activeRooms = [];
 
+// Variable to store the socket.io instance
 let io = null;
 
+// Function to set the socket.io server instance
 const setSocketServerInstance = (ioInstance) => {
   io = ioInstance;
 };
 
+// Function to get the socket.io server instance
 const getSocketServerInstance = () => {
   return io;
 };
 
-// Đối tượng Map() giữ các cặp khóa-giá trị và
-// ghi nhớ thứ tự chèn ban đầu của các khóa.
+// Function to add a new connected user to the Map
 const addNewConnectedUser = ({ socketId, userId }) => {
   connectedUsers.set(socketId, { userId });
-  // Mỗi khi ng dùng nào connect thì sẽ đc lưu thông tin vào
-  // connectedUsers
+  // Log the newly connected users
   console.log("new connected users");
   console.log(connectedUsers);
-
-  // Map(1) {
-  //   'DJ_AI55l3gac6myvAAAB' => { userId: '6339b2100628b591e10ff32a' }
-  // }
 };
 
-// Lấy tất cả các ng dùng đang online
+// Function to get all active connections for a given userId
 const getActiveConnections = (userId) => {
   const activeConnections = [];
 
+  // Iterate through connectedUsers Map
   connectedUsers.forEach(function (value, key) {
-    // key: id của ng dùng đg online
-    // '8XfelQMP_blQn7FeAAAF' => { userId: '632fc9502b39d6c433483c56' },
-    // (value.userId là cái userId)
+    // Check if userId matches the provided userId
     if (value.userId === userId) {
       activeConnections.push(key);
     }
@@ -43,24 +42,30 @@ const getActiveConnections = (userId) => {
   return activeConnections;
 };
 
+// Function to get information about all online users
 const getOnlineUsers = () => {
   const onlineUsers = [];
 
+  // Iterate through connectedUsers Map
   connectedUsers.forEach((value, key) => {
     onlineUsers.push({ socketId: key, userId: value.userId });
   });
 
   return onlineUsers;
 };
+
+// Function to remove a connected user when they disconnect
 const removeConnectedUser = (socketId) => {
-  // Xóa ng dùng khỏi Map khi ng dùng mất kết nối
+  // Check if the connectedUsers Map contains the provided socketId
   if (connectedUsers.has(socketId)) {
     connectedUsers.delete(socketId);
+    // Log the updated connected users after removal
     console.log("new connected users");
     console.log(connectedUsers);
   }
 };
 
+// Export all functions for use in other modules
 module.exports = {
   getSocketServerInstance,
   setSocketServerInstance,

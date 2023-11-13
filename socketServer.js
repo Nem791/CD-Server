@@ -1,5 +1,4 @@
-// Khai báo máy chủ socket.io
-
+// Import necessary socket handlers
 const newConnectionHandler = require("./socketHandlers/newConnectionHandler");
 const createCardHandler = require("./socketHandlers/cards/createCardHandler");
 const deleteCardHandler = require("./socketHandlers/cards/deleteCardHandler");
@@ -9,7 +8,6 @@ const getStudiedCardHandler = require("./socketHandlers/cards/getStudiedCardHand
 const getNotStudiedCardHandler = require("./socketHandlers/cards/getNotStudiedCardHandler");
 const directMessageHandler = require("./socketHandlers/directMessageHandler");
 const directChatHistoryHandler = require("./socketHandlers/directChatHistoryHandler");
-
 const createScheduleHandler = require("./socketHandlers/schedule/createScheduleHandler");
 const updateScheduleHandler = require("./socketHandlers/schedule/updateScheduleHandler");
 const deleteScheduleHandler = require("./socketHandlers/schedule/deleteScheduleHandler");
@@ -19,102 +17,99 @@ const inviteLinkingWordsHandler = require("./socketHandlers/Linking_Words/invite
 const cancelInviteHandler = require("./socketHandlers/Linking_Words/cancelInviteHandler");
 const responseInviteHandler = require("./socketHandlers/Linking_Words/responseInviteHandler");
 
+// Function to register the socket server
 const registerSocketServer = (server) => {
+  // Initialize socket.io server with CORS configuration
   const io = require("socket.io")(server, {
     cors: {
-      // Đưởng dẫn để React có thể kết nối dc vs Socket.io phía server
+      // Allow connections from any origin
       origin: "*",
       methods: ["GET", "POST"],
     },
   });
-  // Nơi để lắng nghe hoặc phát ra các event gửi tới frontend
 
-  // Set giá trị cho đối tượng io để có thể sử dụng ở nhiều nơi
+  // Set the socket server instance for later use
   serverStore.setSocketServerInstance(io);
 
+  // Function to emit online user information
   const emitOnlineUsers = () => {
     const onlineUsers = serverStore.getOnlineUsers();
-    // console.log(onlineUsers);
     io.emit("online-users", { onlineUsers });
   };
 
+  // Handle new connection event
   io.on("connection", (socket) => {
     console.log(`User Connected: ${socket.id}`);
 
-    // Thêm ng dùng vảo mảng những ng dùng đang online
-    // newConnectionHandler(socket, io);
+    // Emit online users on connection
     emitOnlineUsers();
 
-    // Event join-set
+    // Join a room based on the set ID
     socket.on("join-set", (id) => {
       socket.join(id);
-      // * Kiểm tra các phòng đang có
-      // socket.rooms.forEach((room) => {
-      //   console.log("room", room);
-      // });
     });
 
-    // On authenticate
+    // Authenticate the connection
     socket.on("authenticate", (data) => {
       newConnectionHandler(socket, data);
-      // console.log("data: ", data);
     });
 
-    // Event creat-card dc gửi từ Client
+    // Create card event
     socket.on("create-card", (data) => {
-      // console.log(data);
       createCardHandler(data, socket);
     });
 
-    // Event delete-card dc gửi từ Client
+    // Delete card event
     socket.on("delete-card", (data) => {
       deleteCardHandler(data, socket);
     });
 
-    // Event get-card
+    // Get card event
     socket.on("get-card", (id) => {
-      // console.log(id);
       getCardHandler(id, socket);
     });
 
+    // Get studied card event
     socket.on("get-studied", (id) => {
       getStudiedCardHandler(id, socket);
     });
 
+    // Get not studied card event
     socket.on("get-not-studied", (id) => {
       getNotStudiedCardHandler(id, socket);
     });
 
+    // Update card event
     socket.on("update-card", (data) => {
       updateCardHandler(data, socket);
     });
 
-    // Message
-
+    // Direct message event
     socket.on("direct-message", (data) => {
-      // console.log("direct", data);
       directMessageHandler(socket, data);
     });
 
+    // Direct chat history event
     socket.on("direct-chat-history", (data) => {
-      console.log("history", socket.id);
       directChatHistoryHandler(socket, data);
     });
 
+    // Invite to play event
     socket.on("invite-to-play", (data) => {
-      console.log("invite-to-play");
       inviteLinkingWordsHandler(socket, data);
     });
 
+    // Cancel invite event
     socket.on("cancel-invite", (data) => {
       cancelInviteHandler(socket, data);
     });
 
+    // Response to invitation event
     socket.on("response-invitation", (data) => {
-      console.log("response-invitation");
       responseInviteHandler(socket, data);
     });
 
+    // Start timer event
     let timer;
     socket.on("start-timer", () => {
       const remainingTime = 15;
@@ -128,7 +123,7 @@ const registerSocketServer = (server) => {
       }, 1000);
     });
 
-    // Schedule
+    // Schedule events
     socket.on("join-schedule", (data) => {
       socket.join(data);
     });
@@ -140,20 +135,24 @@ const registerSocketServer = (server) => {
     socket.on("update-schedule", (data) => {
       updateScheduleHandler(socket, data);
     });
+
     socket.on("delete-schedule", (data) => {
       deleteScheduleHandler(socket, data);
     });
 
-    // Khi ng dùng mất kết nối internet hoặc offline
+    // Handle disconnect event
     socket.on("disconnect", () => {
       disconnectHandler(socket);
     });
   });
+
+  // Periodically emit online users information every 8 seconds
   setInterval(() => {
     emitOnlineUsers();
   }, [8000]);
 };
 
+// Export the registerSocketServer function
 module.exports = {
   registerSocketServer,
 };
